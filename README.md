@@ -108,3 +108,16 @@ This website will provide all these functionalities while ensuring intuitive nav
 | 26  | As a **logged-in user**, I can have my details saved to avoid re-typing my address with each purchase. |
 | 27  | As a **logged-in user**, I can create a wish list to save selected books for future purchase. |
 | 28  | As a **logged-in user**, I can leave ratings and reviews to provide feedback on books. |
+| 29  | As a **logged-in User** , I can contact the bookstore so that I can find out any information that I require. |
+| 30  | As a **logged-in User** I can save selected products to my wish list for future purchase. |
+
+
+**Epic: Accounts**
+
+| ID  | Content     |
+| --- | ----------- |
+| 31  | As a **user**, I can easily check my login status (logged-in or logged-out) to confirm my current status. |
+| 32  | As a **user**, I can log in or log out of my account at any time to connect or disconnect from the website. |
+| 33  | As a **user**, I can register for an account to access features available for logged-in users. |
+| 34  | As a **user**, I receive a confirmation email upon account registration to verify the successful completion of registration. |
+| 35  | As a **logged-in user**, I can save my details to avoid the need to re-enter my address every time. |
