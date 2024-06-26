@@ -36,7 +36,7 @@ responsive image and link to live site
 
 
 # About
-This is a full-stack e-commerce project built using Django, Python, HTML, CSS, and JavaScript. I have created a website for 'CookBookNook' designed to sell cookbooks and related materials such as kitchen gadgets, cooking utensils, and specialty ingredients.
+This is a full-stack e-commerce project built using Django, Python, HTML, CSS, and JavaScript. I have created a website for 'CookBookNook' designed to sell cookbooks.
 
 
 #
@@ -51,11 +51,11 @@ The target audience for 'CookBookNook' includes:
 
 These users will be seeking:
 
-- An informative website with easy-to-find and concise information about cookbooks and culinary supplies
-- A platform that offers a variety of cookbooks and related items
-- The ability to browse, view, and purchase cookbooks and kitchen tools available for sale
+- An informative website with easy-to-find and concise information about cookbooks.
+- A platform that offers a variety of cookbooks to suit all needs. 
+- The ability to browse, view, and purchase cookbooks available for sale.
 - Features such as user accounts for managing billing history, wish lists, and writing reviews
-- Subscription options for receiving updates on new cookbook releases and culinary trends
+- Subscription options for receiving updates on new cookbook releases and culinary trends.
 
 This website will provide all these functionalities while ensuring intuitive navigation and ease of use.
 
@@ -67,9 +67,9 @@ This website will provide all these functionalities while ensuring intuitive nav
 | --- | ----------- |
 | 1   | As a **store owner**, I can log in and log out of the admin panel to connect or disconnect from the website. |
 | 2   | As a **store owner**, I can log in to access the full backend of the store. |
-| 3   | As a **store owner**, I can add new products to the shop to ensure the website is up to date. |
-| 4   | As a **store owner**, I can edit or delete products to maintain website accuracy. |
-| 5   | As a **store owner**, I can send out newsletters via email to keep customers updated on new products. |
+| 3   | As a **store owner**, I can add new books to the shop to ensure the website is up to date. |
+| 4   | As a **store owner**, I can edit or delete books to maintain website accuracy. |
+| 5   | As a **store owner**, I can send out newsletters via email to keep customers updated on new books. |
 | 6   | As a **store owner**, I have created a Facebook shop page to increase traffic to my website. |
 
 **Epic: First-time User**
@@ -85,12 +85,12 @@ This website will provide all these functionalities while ensuring intuitive nav
 
 | ID  | Content     |
 | --- | ----------- |
-| 11  | As a **user**, I can easily view a list of products offered by CookBookNook. |
+| 11  | As a **user**, I can easily view a list of books offered by CookBookNook. |
 | 12  | As a **user**, I can sort products by category to quickly find what I'm looking for. |
 | 13  | As a **user**, I can filter products by rating, price, and name to easily locate desired items. |
 | 14  | As a **user**, I can search for products using a search form by name, author, or description. |
-| 15  | As a **user**, I can view product details pages that display product name, rating, price, and brief description. |
-| 16  | As a **user**, I can select the quantity of desired products for purchase. |
+| 15  | As a **user**, I can view product details pages that display book name, rating, price, and brief description. |
+| 16  | As a **user**, I can select the quantity of desired books for purchase. |
 | 17  | As a **user**, I can view ratings and reviews to read opinions from other users. |
 | 18  | As a **user**, I receive notifications about any changes I've made for clear understanding of completed, updated, or failed actions. |
 | 19  | As a **user**, I can add selected items to the shopping bag. |
@@ -106,5 +106,5 @@ This website will provide all these functionalities while ensuring intuitive nav
 | 24  | As a **logged-in user**, I can easily see my login status (logged-in or logged-out). |
 | 25  | As a **logged-in user**, I can log in or log out of my account to connect or disconnect from the website. |
 | 26  | As a **logged-in user**, I can have my details saved to avoid re-typing my address with each purchase. |
-| 27  | As a **logged-in user**, I can create a wish list to save selected products for future purchase. |
-| 28  | As a **logged-in user**, I can leave ratings and reviews to provide feedback on products. |
+| 27  | As a **logged-in user**, I can create a wish list to save selected books for future purchase. |
+| 28  | As a **logged-in user**, I can leave ratings and reviews to provide feedback on books. |
