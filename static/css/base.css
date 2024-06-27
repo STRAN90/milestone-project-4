@@ -53,6 +53,12 @@ body {
     color: #000 !important;
 }
 
+.text-white {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
