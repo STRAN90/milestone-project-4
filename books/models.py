@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Category(models.Model):
     """Category model to classify cookbooks"""
     class Meta:
@@ -17,7 +16,7 @@ class Category(models.Model):
 
 class Book(models.Model):
     """Book model to store details about individual cookbooks"""
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=254)
     author = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField()
