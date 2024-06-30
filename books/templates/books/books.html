@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>All Books</h2>
+                <ul>
+                    {% for book in books %}
+                        <li>
+                            <strong>Title:</strong> {{ book.title }}<br>
+                            <strong>Author:</strong> {{ book.author }}<br>
+                            <strong>Category:</strong> {{ book.category.name }}<br>
+                            <strong>Description:</strong> {{ book.description }}<br>
+                            <strong>Price:</strong> ${{ book.price }}<br>
+                           
+                        </li>
+                        <hr>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
