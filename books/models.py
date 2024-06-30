@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Category(models.Model):
     """Category model to classify cookbooks"""
@@ -26,3 +28,26 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Review(models.Model):
+    """Review model to store user reviews for cookbooks"""
+    book = models.ForeignKey(Book, related_name='reviews', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
+    title = models.CharField(max_length=254)
+    content = models.TextField()
+    rating = models.DecimalField(max_digits=2, decimal_places=1)  # Ratings out of 5.0
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.title} by {self.user.username}"
+
+
+class Wishlist(models.Model):
+    """Wishlist model to store user's wishlists of cookbooks"""
+    user = models.ForeignKey(User, related_name='wishlists', on_delete=models.CASCADE)
+    books = models.ManyToManyField(Book, related_name='wishlists')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Wishlist of {self.user.username}"

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Book
+from .models import Category, Book, Review, Wishlist
 
 
 @admin.register(Category)
@@ -21,4 +21,16 @@ class BookAdmin(admin.ModelAdmin):
             'fields': ('review_count',)
         }),
     )
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('title', 'book', 'user', 'rating', 'created_at')
+    search_fields = ('title', 'book__title', 'user__username')
+    list_filter = ('book', 'rating')
+
+@admin.register(Wishlist)
+class WishlistAdmin(admin.ModelAdmin):
+    list_display = ('user', 'created_at')
+    search_fields = ('user__username',)
+    filter_horizontal = ('books',)
 
