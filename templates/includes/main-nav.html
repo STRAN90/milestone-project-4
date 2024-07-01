@@ -17,10 +17,10 @@
                 Categories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Baking & Desserts</a>
-                <a href="" class="dropdown-item">Vegetarian & Vegan</a>
-                <a href="" class="dropdown-item">International Cuisine</a>
-                <a href="" class="dropdown-item">Seafood & Fish</a>
+                <a href="{% url 'books' %}?category=baking_and_desserts" class="dropdown-item">Baking & Desserts</a>
+                <a href="{% url 'books' %}?category=vegetarian_and_vegan" class="dropdown-item">Vegetarian & Vegan</a>
+                <a href="{% url 'books' %}?category=international_cuisine" class="dropdown-item">International Cuisine</a>
+                <a href="{% url 'books' %}?category=seafood_and_fish" class="dropdown-item">Seafood & Fish</a>
             </div>
         </li>
 
