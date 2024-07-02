@@ -24,6 +24,7 @@ class Book(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     review_count = models.DecimalField(max_digits=6, decimal_places=0, null=True, blank=True, default=0)
 
     def __str__(self):
