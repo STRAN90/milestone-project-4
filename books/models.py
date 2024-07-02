@@ -18,6 +18,12 @@ class Category(models.Model):
 
 class Book(models.Model):
     """Book model to store details about individual cookbooks"""
+
+    FORMAT_CHOICES = [
+        ('HB', 'Hardback'),
+        ('PB', 'Paperback'),
+    ]
+
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=254)
     author = models.CharField(max_length=254, null=True, blank=True)
@@ -25,7 +31,8 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    review_count = models.DecimalField(max_digits=6, decimal_places=0, null=True, blank=True, default=0)
+    review_count = models.PositiveIntegerField(default=0)
+    format = models.CharField(max_length=2, choices=FORMAT_CHOICES, default='PB')
 
     def __str__(self):
         return self.title

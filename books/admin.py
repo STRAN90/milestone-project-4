@@ -9,13 +9,13 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'category', 'price', 'review_count')
+    list_display = ('title', 'author', 'category', 'price', 'review_count', 'format')
     search_fields = ('title', 'author', 'category__name')
     list_filter = ('category', 'price')
     readonly_fields = ('review_count',)
     fieldsets = (
         (None, {
-            'fields': ('title', 'author', 'category', 'description', 'price', 'image')
+            'fields': ('title', 'author', 'category', 'description', 'price', 'image', 'format')  # Include 'format' here
         }),
         ('Additional Info', {
             'fields': ('review_count',)
