@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from books.models import Book
+from django.contrib import messages
 
 # Create your views here.
 
@@ -21,3 +23,36 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+def adjust_bag(request, item_id):
+    """Adjust quantity of the book to the specified amount"""
+    book = get_object_or_404(Book, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+
+    if quantity > 99:
+        messages.error(request, 'Sorry, value must be less than or equal to 99.')
+    elif quantity > 0:
+        bag[item_id] = quantity
+        messages.success(request, f'Updated {book.title} quantity to {bag[item_id]}')
+    else:
+        bag.pop(item_id)
+        messages.success(request, f'Removed {book.title} from your bag')
+
+    request.session['bag'] = bag
+    return redirect(reverse("view_bag"))
+
+
+def remove_from_bag(request, item_id):
+    """Remove the item from the shopping bag"""
+    book = get_object_or_404(Book, pk=item_id)
+    bag = request.session.get('bag', {})
+    
+    if item_id in bag:
+        bag.pop(item_id)
+        messages.success(request, f'Removed {book.title} from your shopping bag')
+    else:
+        messages.error(request, f'Item {book.title} not found in your shopping bag')
+    
+    request.session['bag'] = bag
+    return HttpResponse(status=200)
