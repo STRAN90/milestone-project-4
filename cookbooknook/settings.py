@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net',
+]
 
 # Application definition
 
@@ -46,6 +49,9 @@ INSTALLED_APPS = [
     'books',
     'bag',
     'checkout',
+
+    # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +67,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cookbooknook.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -75,8 +83,13 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

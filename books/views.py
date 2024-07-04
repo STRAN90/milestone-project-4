@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Book, Category
 
+
 def all_books(request):
     """ A view to show all books, including sorting and searching queries """
 
