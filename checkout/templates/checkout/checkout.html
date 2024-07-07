@@ -50,6 +50,7 @@
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.book.title }}</strong></p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            <p class="my-0 small text-muted">Format: {{ item.book.get_format_display }}</p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">£{{ item.book.price | calc_subtotal:item.quantity }}</p>

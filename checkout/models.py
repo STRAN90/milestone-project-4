@@ -6,7 +6,6 @@ from django.conf import settings
 
 from books.models import Book
 
-# Create your models here.
 
 class Order(models.Model):
     """ order model """
@@ -36,7 +35,7 @@ class Order(models.Model):
         """
 
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))[
-            'lineitem_total__sum']
+            'lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * \
                 settings.STANDARD_DELIVERY_PERCENTAGE / 100
@@ -60,10 +59,13 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     """  Model to save each item in an Order instance as a lineitem. """
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='lineitem', null=False, blank=False)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False, blank=False)
+    order = models.ForeignKey(
+        Order, on_delete=models.CASCADE, related_name='lineitems', null=False, blank=False)
+    book = models.ForeignKey(
+        Book, on_delete=models.CASCADE, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
         """
