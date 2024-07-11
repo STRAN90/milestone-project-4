@@ -34,9 +34,55 @@
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Order History</p>
-                {{ orders }}
+                <div class="order-history table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                           title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                                <li class="small d-flex align-items-center">
+                                                    <!-- Book Image -->
+                                                    {% if item.book.image %}
+                                                        <img class="img-fluid rounded mr-2" src="{{ item.book.image.url }}"
+                                                             alt="{{ item.book.title }}" height="115px" width="90px">
+                                                    {% else %}
+                                                        <img class="img-fluid rounded mr-2" src="{{ MEDIA_URL }}noimage.png"
+                                                             alt="{{ item.book.name }}" height="115px" width="90px">
+                                                    {% endif %}
+                                                    <!-- Book Title and Format -->
+                                                    <div>
+                                                        {{ item.book.title }} ({{ item.book.format }}) x{{ item.quantity }}
+                                                    </div>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>£{{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
