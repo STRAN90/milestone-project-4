@@ -3,11 +3,17 @@ from .widgets import CustomClearableFileInput
 from .models import Book, Category
 
 
-class BookForm(forms.ModelForm):
+class CategoryForm(forms.ModelForm):
+    """ Form for creating and updating categories."""
+    class Meta:
+        model = Category
+        fields = '__all__'
 
+class BookForm(forms.ModelForm):
+    """ Form for creating and updating books."""
     class Meta:
         model = Book
-        fields = '__all__'
+        exclude = ('discount', 'rating', 'add_to_whishlist', 'review_count',)
 
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
