@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -87,6 +88,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
+                'home.contexts.book_categories',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -132,6 +134,9 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+     'default': dj_database_url.parse('')
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

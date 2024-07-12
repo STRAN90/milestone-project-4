@@ -16,11 +16,10 @@
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="categories-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'books' %}?category=baking_and_desserts" class="dropdown-item">Baking & Desserts</a>
-                <a href="{% url 'books' %}?category=vegetarian_and_vegan" class="dropdown-item">Vegetarian & Vegan</a>
-                <a href="{% url 'books' %}?category=international_cuisine" class="dropdown-item">International Cuisine</a>
-                <a href="{% url 'books' %}?category=seafood_and_fish" class="dropdown-item">Seafood & Fish</a>
+            <div class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                {% for category in categories %}
+                    <a class="dropdown-item" href="{% url 'books' %}?category={{ category.name }}">{{ category.friendly_name }}</a>
+                {% endfor %}
             </div>
         </li>
 
