@@ -69,11 +69,14 @@
                                 <div class="row">
                                     <div class="col">
                                         <p class="lead mb-0 text-left font-weight-bold">£{{ book.price }}</p>
-                                        {% if book.category %}
+                                        {% if book.categories.exists %}
                                             <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                                </a>
+                                                {% for category in book.categories.all %}
+                                                    <a class="text-muted" href="{% url 'books' %}?category={{ category.name }}">
+                                                        <i class="fas fa-tag mr-1"></i>{{ category.friendly_name }}
+                                                    </a>
+                                                {% if not forloop.last %}, {% endif %}
+                                            {% endfor %}
                                             </p>
                                         {% endif %}
                                         {% if book.rating %}
