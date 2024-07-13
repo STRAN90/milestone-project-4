@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_6h-x@1h(4$d8b!j1$vq%@savep6t9c)62u-!w6^gtqqfrj9e4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://cookbooknook-f2a539e614c9.herokuapp.com/', '8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net', 'localhost']
+ALLOWED_HOSTS = ['cookbooknook-f2a539e614c9.herokuapp.com', '8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net',
