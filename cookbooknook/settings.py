@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_6h-x@1h(4$d8b!j1$vq%@savep6t9c)62u-!w6^gtqqfrj9e4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['https://cookbooknook-f2a539e614c9.herokuapp.com/', '8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net',
@@ -115,7 +115,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -127,12 +127,17 @@ WSGI_APPLICATION = 'cookbooknook.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
