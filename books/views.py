@@ -199,7 +199,6 @@ def edit_category(request, category_id):
 
 
 @login_required
-@require_POST  # Ensures the view only responds to POST requests
 def delete_category(request, category_id):
     """ Delete a category """
     if not request.user.is_superuser:
@@ -215,4 +214,4 @@ def delete_category(request, category_id):
         messages.error(request, f'An error occurred while deleting the category: {str(e)}')
 
     # Redirect to add_category page after deletion
-    return redirect(reverse('books:add_category'))
+    return redirect(reverse('add_category'))
