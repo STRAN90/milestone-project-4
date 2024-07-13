@@ -143,7 +143,7 @@ def delete_book(request, book_id):
 
 @login_required
 def add_category(request):
-    """ Add a category to the site"""
+    """ Add a category to the store"""
     if request.method == 'POST':
         form = CategoryForm(request.POST)
 
@@ -162,14 +162,11 @@ def add_category(request):
     }
     return render(request, template, context)
 
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib import messages
-from .forms import CategoryForm  # Import your CategoryForm
 
 def edit_category(request, category_id):
     """ Edit a category in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, unauthorised access. Site owner access only')
         return redirect(reverse('home'))
 
     category = get_object_or_404(Category, pk=category_id)
