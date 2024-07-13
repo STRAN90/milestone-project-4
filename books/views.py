@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -141,6 +142,7 @@ def delete_book(request, book_id):
     messages.success(request, 'Book deleted!')
     return redirect(reverse('books'))
 
+
 @login_required
 def add_category(request):
     """ Add a category to the store"""
@@ -163,6 +165,7 @@ def add_category(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_category(request, category_id):
     """ Edit a category in the store """
     if not request.user.is_superuser:
@@ -193,3 +196,23 @@ def edit_category(request, category_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+@require_POST  # Ensures the view only responds to POST requests
+def delete_category(request, category_id):
+    """ Delete a category """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can delete categories.')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(Category, pk=category_id)
+
+    try:
+        category.delete()
+        messages.success(request, 'Category deleted successfully.')
+    except Exception as e:
+        messages.error(request, f'An error occurred while deleting the category: {str(e)}')
+
+    # Redirect to add_category page after deletion
+    return redirect(reverse('books:add_category'))

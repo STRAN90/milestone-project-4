@@ -1,5 +1,5 @@
 <!-- Model -->
-<div id="deleteModal{{category.id}}" class="modal" tabindex="-1">
+<div id="deleteModal{{category.id}}" class="modal" tabindex="-1" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-center">
             <div class="modal-header logo-font">
@@ -8,18 +8,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body-category">
-                <h4 class="mt-4">Are you sure you want to delete <br> <strong>{{category.friendly_name }}</strong>
+            <div class="modal-body-delete">
+                <h4 class="mt-4">Are you sure you want to delete <br> <strong>{{category.name }}</strong>
                     category?
                 </h4>
                 <p class="text-danger mt-3">This action cannot be undone!</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a href="" class="btn btn-danger">Delete</a>
+                <a href="{% url 'delete_category' category.id %}" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- End of Model -->
