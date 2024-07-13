@@ -17,7 +17,7 @@ def all_books(request):
     selected_categories = None
     sort = None
     direction = None
-    categories = Category.objects.all()  # Fetch all categories initially
+    categories = Category.objects.all() 
 
     if request.GET:
         if 'sort' in request.GET:
@@ -38,7 +38,7 @@ def all_books(request):
             books = books.order_by(sortkey)
 
         if 'category' in request.GET:
-            selected_categories = request.GET['category'].split(',')
+            selected_categories = request.GET.getlist('category')
             books = books.filter(category__name__in=selected_categories)
             selected_categories = Category.objects.filter(name__in=selected_categories)
 
@@ -56,7 +56,7 @@ def all_books(request):
     context = {
         'books': books,
         'search_term': query,
-        'categories': categories,  # Pass all categories to the template
+        'categories': categories,
         'current_categories': selected_categories,
         'current_sorting': current_sorting,
     }
