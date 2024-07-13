@@ -70,7 +70,10 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_book' %}" class="dropdown-item">Book Management</a>
+                                <a href="{% url 'add_book' %}" class="dropdown-item">Book Management</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{% url 'add_category' %}" class="dropdown-item">Add Category</a>
+                                <a href="{% url 'add_book' %}" class="dropdown-item">Add Book</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

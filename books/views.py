@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Book, Category
-from .forms import BookForm
+from .forms import BookForm, CategoryForm
 
 
 def all_books(request):
@@ -135,8 +135,64 @@ def delete_book(request, book_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, unauthorised access. Site owner access only')
         return redirect(reverse('home'))
-        
+
     book = get_object_or_404(Book, pk=book_id)
     book.delete()
     messages.success(request, 'Book deleted!')
     return redirect(reverse('books'))
+
+@login_required
+def add_category(request):
+    """ Add a category to the site"""
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Category added successfully!')
+            return redirect(reverse('add_category'))
+        else:
+            messages.error(
+                request, 'Failed to add category. Please ensure the form is valid.')
+    else:
+        form = CategoryForm()
+    template = 'books/add_category.html'
+    context = {
+        'form': form
+    }
+    return render(request, template, context)
+
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from .forms import CategoryForm  # Import your CategoryForm
+
+def edit_category(request, category_id):
+    """ Edit a category in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(Category, pk=category_id)
+    
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, instance=category)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated category!')
+            return redirect(reverse('add_category'))  # Redirect to appropriate view
+        else:
+            messages.error(
+                request,
+                'Failed to update category. Please ensure the form is valid.'
+            )
+    else:
+        form = CategoryForm(instance=category)
+        messages.info(request, f'You are editing "{category.friendly_name}"')
+
+    template = 'books/edit_category.html'
+    context = {
+        'form': form,
+        'category': category,
+    }
+
+    return render(request, template, context)
