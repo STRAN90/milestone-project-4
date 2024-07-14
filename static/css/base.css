@@ -358,3 +358,13 @@ input[name='q']::placeholder {
         padding: .25rem .5rem !important;
     }
 }
+
+div.img-thumbnail.wishlist-img {
+    border: none;
+    max-width: 70%;
+    height: 70%;
+}
+
+tr.border-bottom {
+    text-align: left;
+}
