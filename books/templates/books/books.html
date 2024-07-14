@@ -15,8 +15,9 @@
         <div class="row">
             <div class="col text-center mt-3">
                 {% if current_categories %}
-                    <h1>Books in {% for category in current_categories %}{{ category.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</h1>
+                    <h1>Books in {% for category in current_categories %}{{ category.friendly_name }}{% if not forloop.last %}, {% endif %}{% endfor %}</h1>
                 {% else %}
+                    <hr>
                     <h1>Books</h1>
                 {% endif %}
             </div>
