@@ -368,3 +368,7 @@ div.img-thumbnail.wishlist-img {
 tr.border-bottom {
     text-align: left;
 }
+
+a.btn.btn-primary.mt-3 {
+    margin-left: 4%;
+}
