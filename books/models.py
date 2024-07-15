@@ -50,6 +50,12 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.title} by {self.user.username}"
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.book.review_count = self.book.reviews.count()
+        total_rating = sum(review.rating for review in self.book.reviews.all())
+        self.book.rating = total_rating / self.book.review_count if self.book.review_count > 0 else 0
+        self.book.save()
 
 class Wishlist(models.Model):
     """Wishlist model to store user's wishlists of cookbooks"""

@@ -5,8 +5,8 @@ from django.views.decorators.http import require_POST
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Book, Category
-from .forms import BookForm, CategoryForm
+from .models import Book, Category, Review
+from .forms import BookForm, CategoryForm, ReviewForm
 
 
 def all_books(request):
@@ -65,14 +65,29 @@ def all_books(request):
 
 
 def book_detail(request, book_id):
-    """ A view to show individual book details """
-    book = get_object_or_404(Book, pk=book_id)
+    book = get_object_or_404(Book, id=book_id)
+    reviews = book.reviews.all()
+    
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.book = book
+                review.user = request.user
+                review.save()
+                return redirect('book_detail', book_id=book.id)
+        else:
+            return redirect('login')
 
-    context = {
+    else:
+        form = ReviewForm()
+
+    return render(request, 'books/book_detail.html', {
         'book': book,
-    }
-
-    return render(request, 'books/book_detail.html', context)
+        'reviews': reviews,
+        'form': form,
+    })
 
 
 @login_required
@@ -215,3 +230,47 @@ def delete_category(request, category_id):
 
     # Redirect to add_category page after deletion
     return redirect(reverse('add_category'))
+
+
+@login_required
+def submit_review(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.book = book
+            review.save()
+            return redirect('book_detail', book_id=book_id)
+    else:
+        form = ReviewForm()
+    
+    context = {
+        'form': form,
+        'book': book,
+    }
+    return render(request, 'books/review_submit.html', context)
+
+
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id, user=request.user)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('book_detail', book_id=review.book.id)
+    else:
+        form = ReviewForm(instance=review)
+    return render(request, 'books/edit_review.html', {'form': form, 'review': review})
+
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id, user=request.user)
+    book_id = review.book.id
+    if request.method == 'POST':
+        review.delete()
+        return redirect('book_detail', book_id=book_id)
+    return render(request, 'books/delete_review.html', {'review': review})
