@@ -78,7 +78,7 @@ def book_detail(request, book_id):
                 review.save()
                 return redirect('book_detail', book_id=book.id)
         else:
-            return redirect('login')
+            return redirect('account_login')
 
     else:
         form = ReviewForm()
