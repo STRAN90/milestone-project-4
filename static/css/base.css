@@ -372,3 +372,11 @@ tr.border-bottom {
 a.btn.btn-primary.mt-3 {
     margin-left: 4%;
 }
+
+input#id_title {
+    margin-left: 5%;
+}
+
+input#id_rating {
+    margin-left: 2%;
+}
