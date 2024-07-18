@@ -347,7 +347,11 @@ input[name='q']::placeholder {
         font-size: .9rem;
     }
 
-
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+    }
+    
     .btn.btn-outline-black.rounded-0.btn-lg,
     .btn.btn-black.rounded-0.btn-lg {
         padding: .375rem .375rem;
@@ -371,10 +375,6 @@ tr.border-bottom {
 
 a.btn.btn-primary.mt-3 {
     margin-left: 4%;
-}
-
-input#id_title {
-    margin-left: 5%;
 }
 
 input#id_rating {
