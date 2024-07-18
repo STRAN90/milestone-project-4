@@ -9,16 +9,16 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'category', 'price', 'review_count', 'format')
+    list_display = ('title', 'author', 'category', 'price', 'review_count', 'format', 'is_clearance', 'is_new_arrival')
     search_fields = ('title', 'author', 'category__name')
-    list_filter = ('category', 'price')
-    readonly_fields = ('review_count',)
+    list_filter = ('category', 'price', 'is_clearance', 'is_new_arrival')
+    readonly_fields = ('review_count', 'created_at')
     fieldsets = (
         (None, {
-            'fields': ('title', 'author', 'category', 'description', 'price', 'image', 'format')  # Include 'format' here
+            'fields': ('title', 'author', 'category', 'description', 'price', 'image', 'format')
         }),
         ('Additional Info', {
-            'fields': ('review_count',)
+            'fields': ('review_count', 'is_clearance', 'is_new_arrival', 'created_at')
         }),
     )
 

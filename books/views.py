@@ -266,6 +266,7 @@ def edit_review(request, review_id):
         form = ReviewForm(instance=review)
     return render(request, 'books/edit_review.html', {'form': form, 'review': review})
 
+
 @login_required
 def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id, user=request.user)
@@ -274,3 +275,12 @@ def delete_review(request, review_id):
         review.delete()
         return redirect('book_detail', book_id=book_id)
     return render(request, 'books/delete_review.html', {'review': review})
+
+
+def clearance_books(request):
+    books = Book.objects.filter(is_clearance=True)
+    return render(request, 'books/clearance_books.html', {'books': books})
+
+def new_arrivals(request):
+    books = Book.objects.filter(is_new_arrival=True).order_by('-created_at')
+    return render(request, 'books/new_arrivals.html', {'books': books})
