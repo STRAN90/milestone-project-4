@@ -42,7 +42,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 {% load static %}
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img src="{% static '/media/logo.png' %}" alt="CookBookNook Logo" class="brand-logo logo-fork">
+                    <img src="{{ MEDIA_URL }}logo.png" alt="CookBookNook Logo" class="brand-logo logo-fork">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
