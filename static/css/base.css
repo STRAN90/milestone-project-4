@@ -377,10 +377,6 @@ a.btn.btn-primary.mt-3 {
     margin-left: 4%;
 }
 
-input#id_rating {
-    margin-left: 2%;
-}
-
 /* form styling */
 .form-container {
     max-width: 600px;
@@ -421,4 +417,17 @@ input#id_rating {
 .form-group .errorlist {
     color: red;
     font-size: 0.875em;
+}
+
+.border {
+    border: 1px solid #212529 !important;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
