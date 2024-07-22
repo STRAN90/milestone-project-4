@@ -16,22 +16,25 @@ body {
     flex: 1;
 }
 
+/* Default styles for the footer (not fixed) */
 .footer {
     background: #000;
     color: #fff;
     text-align: center;
     padding: 1rem;
     width: 100%;
+    /* Default positioning */
+    position: fixed;
+    bottom: 0;
 }
 
-.footer .container {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
+/* Media query for mobile view (adjust as needed for your specific breakpoint) */
 @media (max-width: 767px) {
     .footer {
-        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }
 
@@ -475,4 +478,8 @@ a.btn.btn-primary {
 
 .footer-text {
     text-transform: none;
+}
+
+.empty{
+    height: 1%;
 }
