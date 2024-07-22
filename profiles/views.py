@@ -49,3 +49,14 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def book_management(request):
+    """ Display book management page where admin can choose to add category and book """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+    
+    template = 'profiles/book_management.html'
+    return render(request, template)
