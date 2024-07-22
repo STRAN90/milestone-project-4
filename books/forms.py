@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 from .widgets import CustomClearableFileInput
 from .models import Book, Category, Review
 
@@ -36,3 +37,22 @@ class ReviewForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter content'}),
             'rating': forms.NumberInput(attrs={'class': 'form-control', 'min': '1', 'max': '5'}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title'].validators.extend([
+            MinLengthValidator(limit_value=2, message="Title must be at least 2 characters long."),
+            MaxLengthValidator(limit_value=100, message="Title cannot exceed 100 characters.")
+        ])
+        self.fields['content'].validators.extend([
+            MinLengthValidator(limit_value=10, message="Content must be at least 10 characters long."),
+            MaxLengthValidator(limit_value=1000, message="Content cannot exceed 1000 characters.")
+        ])
+
+    def clean_rating(self):
+        rating = self.cleaned_data.get('rating')
+        if rating is None:
+            raise forms.ValidationError("Rating is required.")
+        if not (1 <= rating <= 5):
+            raise forms.ValidationError("Rating must be between 1 and 5.")
+        return rating
