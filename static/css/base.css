@@ -472,3 +472,7 @@ a.btn.btn-primary {
     margin-top: 3%;
     font-weight: 700;
 }
+
+.footer-text {
+    text-transform: none;
+}
