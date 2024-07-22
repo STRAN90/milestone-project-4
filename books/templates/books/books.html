@@ -16,10 +16,10 @@
         <div class="col text-center mt-3">
             {% if current_categories %}
             <hr>
-            <h1>Books in {% for category in current_categories %}{{ category.friendly_name }}{% if not forloop.last %}, {% endif %}{% endfor %}</h1>
+            <h1 class="mb-5">Books in {% for category in current_categories %}{{ category.friendly_name }}{% if not forloop.last %}, {% endif %}{% endfor %}</h1>
             {% else %}
             <hr>
-            <h1>All Books</h1>
+            <h1 class="mb-5">All Books</h1>
             <hr>
             {% endif %}
         </div>
