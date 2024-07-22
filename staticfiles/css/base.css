@@ -347,7 +347,11 @@ input[name='q']::placeholder {
         font-size: .9rem;
     }
 
-
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+    }
+    
     .btn.btn-outline-black.rounded-0.btn-lg,
     .btn.btn-black.rounded-0.btn-lg {
         padding: .375rem .375rem;
@@ -373,10 +377,73 @@ a.btn.btn-primary.mt-3 {
     margin-left: 4%;
 }
 
-input#id_title {
-    margin-left: 5%;
+/* form styling */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input#id_rating {
-    margin-left: 2%;
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+}
+
+.form-group .errorlist {
+    color: red;
+    font-size: 0.875em;
+}
+
+.border {
+    border: 1px solid #212529 !important;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a.btn.btn-primary {
+    background-color: #80bd92;
+    border-color: #80bd92;
+}
+
+.btn-custom {
+    background-color: #ffd710;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: #000;
+    font-family: inherit;
+    text-transform: uppercase;
+    margin-top: 3%;
+    font-weight: 700;
 }
