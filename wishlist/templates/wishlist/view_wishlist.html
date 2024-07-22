@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_title %} | Wishlist{% endblock %}
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
@@ -9,7 +15,7 @@
     <div class="row">
         <div class="col text-center">
             <hr>
-            <h2 class="logo-font mb-4 mt-5">Wishlist</h2>
+            <h2 class="logo-font mb-5 mt-5">Wishlist</h2>
             <hr>
         </div>
     </div>
@@ -32,12 +38,12 @@
                             <td>
                                 <div class="img-thumbnail wishlist-img">
                                     {% if item.book.image %}
-                                    <a href="{{ item.book.image.url }}" target="_blank">
+                                    <a href="{% url 'book_detail' item.book.id %}"> <!-- Link to book detail page -->
                                         <img src="{{ item.book.image.url }}" alt="{{ item.book.title }}" class="img-thumbnail">
                                     </a>
                                     {% else %}
-                                    <a href="">
-                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ item.book.title }}" class="img-thumbnail">
+                                    <a href="{% url 'book_detail' item.book.id %}"> <!-- Link to book detail page -->
+                                        <img src="{% static 'images/noimage.png' %}" alt="{{ item.book.title }}" class="img-thumbnail">
                                     </a>
                                     {% endif %}
                                 </div>
