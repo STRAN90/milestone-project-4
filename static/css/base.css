@@ -26,6 +26,7 @@ body {
     /* Default positioning */
     position: fixed;
     bottom: 0;
+    height: 5%;
 }
 
 /* Media query for mobile view (adjust as needed for your specific breakpoint) */
