@@ -43,7 +43,7 @@
                                     </a>
                                     {% else %}
                                     <a href="{% url 'book_detail' item.book.id %}"> <!-- Link to book detail page -->
-                                        <img src="{% static 'images/noimage.png' %}" alt="{{ item.book.title }}" class="img-thumbnail">
+                                        <img src="{% static 'media/noimage.png' %}" alt="{{ item.book.title }}" class="img-thumbnail">
                                     </a>
                                     {% endif %}
                                 </div>
