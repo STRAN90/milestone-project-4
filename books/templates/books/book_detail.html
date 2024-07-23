@@ -28,11 +28,11 @@
                     <p><strong>Format:</strong> {{ book.get_format_display }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ book.price }}</p>
                     {% if book.category %}
-                    <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                        </a>
-                    </p>
+                        <p class="small mt-1 mb-0">
+                            <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                            </a>
+                        </p>
                     {% endif %}
                     {% if book.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ book.rating }} / 5</small>
@@ -59,34 +59,22 @@
                                     <div class="form-group w-50">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <button class="decrement-qty btn btn-color rounded mr-1"
-                                                    data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}">
-                                                    <span class="icon">
-                                                        <i class="fas fa-minus"></i>
-                                                    </span>
+                                                <button class="decrement-qty btn btn-color rounded mr-1" data-item_id="{{ book.id }}" id="decrement-qty_{{ book.id }}">
+                                                    <span class="icon"><i class="fas fa-minus"></i></span>
                                                 </button>
                                             </div>
-                                            <input class="form-control qty_input" type="number"
-                                                name="quantity" value="1" min="1" max="99"
-                                                data-item_id="{{ book.id }}"
-                                                id="id_qty_{{ book.id }}">
+                                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
                                             <div class="input-group-append">
-                                                <button class="increment-qty btn btn-black rounded-0"
-                                                    data-item_id="{{ book.id }}" id="increment-qty_{{ book.id }}">
-                                                    <span class="icon">
-                                                        <i class="fas fa-plus"></i>
-                                                    </span>
+                                                <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ book.id }}" id="increment-qty_{{ book.id }}">
+                                                    <span class="icon"><i class="fas fa-plus"></i></span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-12 d-flex align-items-center justify-content-center">
                                     <a href="{% url 'books' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
+                                        <span class="icon"><i class="fas fa-chevron-left"></i></span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
                                     <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
@@ -105,50 +93,49 @@
         <div class="row mt-5">
             <div class="col-12 text-center">
                 {% if reviews %}
-        {% for review in reviews %}
-            <div class="review-card mb-4">
-                <h4>{{ review.title }}</h4>
-                <p>{{ review.content }}</p>
-                <p><strong>Rating:</strong> {{ review.rating }} / 5</p>
-                <p><strong>Reviewed by:</strong> {{ review.user.username }} on {{ review.created_at }}</p>
-                
-                {% if review.user == request.user %}
-                    <a href="{% url 'edit_review' review.id %}" class="btn btn-secondary btn-sm">Edit</a>
-                    <a href="{% url 'delete_review' review.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    {% for review in reviews %}
+                        <div class="review-card mb-4">
+                            <h4>{{ review.title }}</h4>
+                            <p>{{ review.content }}</p>
+                            <p><strong>Rating:</strong> {{ review.rating }} / 5</p>
+                            <p><strong>Reviewed by:</strong> {{ review.user.username }} on {{ review.created_at }}</p>
+                            {% if review.user == request.user %}
+                                <a href="{% url 'edit_review' review.id %}" class="btn btn-secondary btn-sm">Edit</a>
+                                <a href="{% url 'delete_review' review.id %}" class="btn btn-danger btn-sm">Delete</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No reviews yet. Be the first to leave a review!</p>
+                {% endif %}
+
+                {% if request.user.is_authenticated %}
+                    <h4 class="mt-4">Leave a Review</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        {% if form.errors %}
+                            <div class="alert alert-danger mt-3">
+                                <strong>Please correct the errors below:</strong>
+                                <ul>
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    {% for error in form.non_field_errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                        <button type="submit" class="btn btn-primary mt-3 mb-5">Submit</button>
+                    </form>
+                {% else %}
+                    <p class="mt-4">You need to <a href="{% url 'account_login' %}">log in</a> to leave a review.</p>
                 {% endif %}
             </div>
-        {% endfor %}
-    {% else %}
-        <p>No reviews yet. Be the first to leave a review!</p>
-    {% endif %}
-
-    {% if request.user.is_authenticated %}
-        <h4 class="mt-4">Leave a Review</h4>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-    
-            {% if form.errors %}
-                <div class="alert alert-danger mt-3">
-                    <strong>Please correct the errors below:</strong>
-                    <ul>
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                <li>{{ error }}</li>
-                            {% endfor %}
-                        {% endfor %}
-                        {% for error in form.non_field_errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-            <button type="submit" class="btn btn-primary mt-3 mb-5">Submit</button>
-        </form>
-    {% else %}
-        <p class="mt-4">You need to <a href="{% url 'account_login' %}">log in</a> to leave a review.</p>
-    {% endif %}
-</div>
+        </div>
 
         <!-- Delete Confirmation Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -177,6 +164,6 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'books/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    {% include 'books/includes/quantity_input_script.html' %}
 {% endblock %}

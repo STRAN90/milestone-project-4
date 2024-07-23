@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.http import require_POST
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -10,14 +9,12 @@ from .forms import BookForm, CategoryForm, ReviewForm
 
 
 def all_books(request):
-    """ A view to show all books, including sorting and searching queries """
-
     books = Book.objects.all()
     query = None
     selected_categories = None
     sort = None
     direction = None
-    categories = Category.objects.all() 
+    categories = Category.objects.all()
 
     if request.GET:
         if 'sort' in request.GET:
@@ -26,9 +23,9 @@ def all_books(request):
             if sortkey == 'name':
                 sortkey = 'lower_title'
                 books = books.annotate(lower_title=Lower('title'))
-            if sortkey == 'category':
+            elif sortkey == 'category':
                 sortkey = 'category__name'
-            if sortkey == 'rating':
+            elif sortkey == 'rating':
                 sortkey = 'rating'
 
             if 'direction' in request.GET:
@@ -47,7 +44,7 @@ def all_books(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('books'))
-            
+
             queries = Q(title__icontains=query) | Q(description__icontains=query)
             books = books.filter(queries)
 
@@ -79,20 +76,20 @@ def book_detail(request, book_id):
                 return redirect('book_detail', book_id=book.id)
         else:
             return redirect('account_login')
-
     else:
         form = ReviewForm()
 
-    return render(request, 'books/book_detail.html', {
+    context = {
         'book': book,
         'reviews': reviews,
         'form': form,
-    })
+    }
+
+    return render(request, 'books/book_detail.html', context)
 
 
 @login_required
 def add_book(request):
-    """ Add a book to the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, unauthorised access. Site owner access only')
         return redirect(reverse('home'))
@@ -107,18 +104,16 @@ def add_book(request):
             messages.error(request, 'Failed to add book. Please ensure the form is valid.')
     else:
         form = BookForm()
-        
-    template = 'books/add_book.html'
+
     context = {
         'form': form,
     }
 
-    return render(request, template, context)
+    return render(request, 'books/add_book.html', context)
 
 
 @login_required
 def edit_book(request, book_id):
-    """ Edit a book in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, unauthorised access. Site owner access only')
         return redirect(reverse('home'))
@@ -136,18 +131,16 @@ def edit_book(request, book_id):
         form = BookForm(instance=book)
         messages.info(request, f'You are editing {book.title}')
 
-    template = 'books/edit_book.html'
     context = {
         'form': form,
         'book': book,
     }
 
-    return render(request, template, context)
+    return render(request, 'books/edit_book.html', context)
 
 
 @login_required
 def delete_book(request, book_id):
-    """ Delete a book from the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, unauthorised access. Site owner access only')
         return redirect(reverse('home'))
@@ -160,29 +153,26 @@ def delete_book(request, book_id):
 
 @login_required
 def add_category(request):
-    """ Add a category to the store"""
     if request.method == 'POST':
         form = CategoryForm(request.POST)
-
         if form.is_valid():
             form.save()
             messages.success(request, 'Category added successfully!')
             return redirect(reverse('add_category'))
         else:
-            messages.error(
-                request, 'Failed to add category. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add category. Please ensure the form is valid.')
     else:
         form = CategoryForm()
-    template = 'books/add_category.html'
+
     context = {
-        'form': form
+        'form': form,
     }
-    return render(request, template, context)
+
+    return render(request, 'books/add_category.html', context)
 
 
 @login_required
 def edit_category(request, category_id):
-    """ Edit a category in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, unauthorised access. Site owner access only')
         return redirect(reverse('home'))
@@ -194,28 +184,23 @@ def edit_category(request, category_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated category!')
-            return redirect(reverse('add_category'))  # Redirect to appropriate view
+            return redirect(reverse('add_category'))
         else:
-            messages.error(
-                request,
-                'Failed to update category. Please ensure the form is valid.'
-            )
+            messages.error(request, 'Failed to update category. Please ensure the form is valid.')
     else:
         form = CategoryForm(instance=category)
         messages.info(request, f'You are editing "{category.friendly_name}"')
 
-    template = 'books/edit_category.html'
     context = {
         'form': form,
         'category': category,
     }
 
-    return render(request, template, context)
+    return render(request, 'books/edit_category.html', context)
 
 
 @login_required
 def delete_category(request, category_id):
-    """ Delete a category """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can delete categories.')
         return redirect(reverse('home'))
@@ -228,7 +213,6 @@ def delete_category(request, category_id):
     except Exception as e:
         messages.error(request, f'An error occurred while deleting the category: {str(e)}')
 
-    # Redirect to add_category page after deletion
     return redirect(reverse('add_category'))
 
 
@@ -251,6 +235,7 @@ def submit_review(request, book_id):
         'form': form,
         'book': book,
     }
+
     return render(request, 'books/review_submit.html', context)
 
 
@@ -264,7 +249,11 @@ def edit_review(request, review_id):
             return redirect('book_detail', book_id=review.book.id)
     else:
         form = ReviewForm(instance=review)
-    return render(request, 'books/edit_review.html', {'form': form, 'review': review})
+
+    return render(request, 'books/edit_review.html', {
+        'form': form,
+        'review': review,
+    })
 
 
 @login_required
@@ -280,6 +269,7 @@ def delete_review(request, review_id):
 def clearance_books(request):
     books = Book.objects.filter(is_clearance=True)
     return render(request, 'books/clearance_books.html', {'books': books})
+
 
 def new_arrivals(request):
     books = Book.objects.filter(is_new_arrival=True).order_by('-created_at')

@@ -3,15 +3,14 @@ from books.models import Book
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 
 def view_bag(request):
-    """ A view that renders the bag contents page """
+    """A view that renders the bag contents page"""
     return render(request, 'bag/bag.html')
 
 @login_required
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """Add a quantity of the specified product to the shopping bag"""
     book = get_object_or_404(Book, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
