@@ -6,12 +6,12 @@ Google Chrome Dev Tools Lighthouse function to check the performance, accessibil
 
 #### Desktop
 <p align="center">
-  <img src="static/images/readme/testing/lighthouse.png" width="30%" height="30%">
+  <img src="static/images/readme/testing/lighthouse-desktop.png" width="30%" height="30%">
 </p>
 
 #### Mobile
 <p align="center">
-  <img src="static/images/readme/testing/lighthouse-mob.png" width="30%" height="30%">
+  <img src="static/images/readme/testing/lighthouse-mobile.png" width="30%" height="30%">
 </p>
 
 ### Browser Compatibility
