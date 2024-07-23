@@ -32,10 +32,6 @@ Website is fully responsive, with use of 4 breakpoints:
 
 I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files by URI, pasting the web address, checking to ensure no errors were found. After changing the aria-labelledby attribute to point to an element in the same document no error or warnings found. 
 
-<p align="center">
-  <img src="static/images/readme/testing/html-validator.png" width="30%" height="30%">
-</p>
-
 ### Manual Testing user stories
 
 * Home Page Desktop view
@@ -58,12 +54,7 @@ I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files
 
 - Below the buttons is a link for the user if they have mistaken the wrong click and is already registers they can click on to the link to be redirected to the login page.
 
-![Register Page Screenshot](/static/images/readme/testing/register(Desktop).png)
-![f_name Screenshot](/static/images/readme/testing/f_name_register(Desktop).png)
-![l_name Page Screenshot](/static/images/readme/testing/l_name_register(Desktop).png)
-![email Screenshot]()
-![Register Page Screenshot](/static/images/readme/testing/email_register(Desktop).png)
-![Password Screenshot](/static/images/readme/testing/password_one_register(Desktop).png)
+![Register Page Screenshot](/static/images/readme/testing/register.png)
 
 - When filling the form, the above images show the tooltip working as it should, if a input field is not filled in, the field is let known to the user. 
 
@@ -181,7 +172,7 @@ I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files
 
 W3 HTML Validator (https://validator.w3.org/) to validate all HTML files by URI, 
 
-![Home Page Screenshot](/static/images/readme/testing/home_html.png)
+![Home Page Screenshot](/static/images/readme/testing/html-home.png)
 ![Register Page Screenshot](/static/images/readme/testing/register_html.png)
 ![Login Page Screenshot](/static/images/readme/testing/login_html.png)
 ![Categories Page Screenshot](/static/images/readme/testing/catergories_html.png)
