@@ -57,6 +57,6 @@ def book_management(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only store owners can do that.')
         return redirect(reverse('home'))
-    
+
     template = 'profiles/book_management.html'
     return render(request, template)
