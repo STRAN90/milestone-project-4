@@ -52,7 +52,7 @@
                 {% endfor %}
                 
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0 mb-5" href="{% url 'books' %}">Cancel</a>
+                    <a class="btn btn-outline-black rounded-0 mb-5" href="{% url 'book_detail' book.id %}">Cancel</a>
                     <button class="btn btn-black rounded-0 mb-5" type="submit">Update Book</button>
                 </div>
             </form>
