@@ -38,13 +38,13 @@
                             <td>
                                 <div class="img-thumbnail wishlist-img">
                                     {% if item.book.image %}
-                                    <a href="{% url 'book_detail' item.book.id %}"> <!-- Link to book detail page -->
+                                    <a href="{% url 'book_detail' item.book.id %}"> 
                                         <img src="{{ item.book.image.url }}" alt="{{ item.book.title }}" class="img-thumbnail">
                                     </a>
                                     {% else %}
-                                    <a href="{% url 'book_detail' item.book.id %}"> <!-- Link to book detail page -->
-                                        <img src="{{ MEDIA_URL }}noimage.png%" alt="{{ item.book.title }}" class="img-thumbnail">
-                                    </a>
+                                    <a href="{% url 'book_detail' item.book.id %}"> 
+                                        <img src="{% static 'noimage.png' %}" alt="{{ item.book.title }}" class="img-thumbnail">
+                                    </a>                                    
                                     {% endif %}
                                 </div>
                             </td>
