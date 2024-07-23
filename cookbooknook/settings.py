@@ -22,15 +22,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'jd5(wnu%cr_kuu^nitgckh)70z6*$uroh-ewr15rtn0kxy#hi-')
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'jd5(wnu%cr_kuu^nitgckh)70z6*$uroh-ewr15rtn0kxy#hi-'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cookbooknook-f2a539e614c9.herokuapp.com', '8000-stran90-milestoneprojec-lsl7cepq652.ws.codeinstitute-ide.net', 'localhost']
+ALLOWED_HOSTS = [
+    'cookbooknook-f2a539e614c9.herokuapp.com',
+    '8000-stran90-milestoneprojec-lsl7cepq652.ws.codeinstitute-ide.net',
+    'localhost',
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-stran90-milestoneprojec-lsl7cepq652.ws.codeinstitute-ide.net',
+    'https://8000-stran90-milestoneprojec-lsl7cepq652.ws.'
+    'codeinstitute-ide.net',
 ]
 
 # Application definition
@@ -85,7 +93,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # required by allauth
+                # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -124,7 +133,7 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'cookbooknook.wsgi.application'
 
 
-# Database
+# Database configuration
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
@@ -139,22 +148,33 @@ else:
         }
     }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 

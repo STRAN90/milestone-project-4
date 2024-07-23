@@ -8,7 +8,9 @@ from .models import Wishlist
 @login_required
 def add_to_wishlist(request, book_id):
     book = get_object_or_404(Book, id=book_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user, book=book)
+    wishlist, created = Wishlist.objects.get_or_create(
+        user=request.user, book=book
+    )
     if created:
         messages.success(request, 'Book added to your wishlist!')
     else:

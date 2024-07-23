@@ -18,10 +18,13 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
-
+            messages.error(
+                request,
+                'Update failed. Please ensure the form is valid.'
+            )
     else:
         form = UserProfileForm(instance=profile)
+
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
@@ -53,7 +56,8 @@ def order_history(request, order_number):
 
 @login_required
 def book_management(request):
-    """ Display book management page where admin can choose to add category and book """
+    """ Display book management page where admin
+    can choose to add category and book """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry only store owners can do that.')
         return redirect(reverse('home'))

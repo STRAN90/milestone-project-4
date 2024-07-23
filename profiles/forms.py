@@ -22,13 +22,23 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County, State or Locality',
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        # Set autofocus on the first field
+        if 'default_phone_number' in self.fields:
+            attrs = self.fields['default_phone_number'].widget.attrs
+
+            attrs['autofocus'] = True
+
+        # Add placeholders and class attributes to each field
         for field in self.fields:
             if field != 'default_country':
                 if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
+                    placeholder = f'{placeholders.get(field, field)} *'
                 else:
-                    placeholder = placeholders[field]
+                    placeholder = placeholders.get(field, field)
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+
+            # Ensure class and label attributes are set for all fields
+            self.fields[field].widget.attrs['class'] = (
+                'border-black rounded-0 profile-form-input'
+            )
             self.fields[field].label = False
