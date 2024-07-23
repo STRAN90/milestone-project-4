@@ -27,10 +27,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'jd5(wnu%cr_kuu^nitgckh)70z6*$uroh-ewr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cookbooknook-f2a539e614c9.herokuapp.com', '8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net', 'localhost']
+ALLOWED_HOSTS = ['cookbooknook-f2a539e614c9.herokuapp.com', '8000-stran90-milestoneprojec-lsl7cepq652.ws.codeinstitute-ide.net', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-stran90-milestoneprojec-hkhq0i5kxqa.ws.codeinstitute-ide.net',
+    'https://8000-stran90-milestoneprojec-lsl7cepq652.ws.codeinstitute-ide.net',
 ]
 
 # Application definition
