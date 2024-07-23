@@ -40,7 +40,7 @@ I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files
 
 * Home Page Desktop view
 <p align="center">
-  <img src="static/images/readme/testing/homepage-desktop.pngpng" width="100%" height="100%>
+  <img src="static/images/readme/testing/homepage-desktop.png" width="100%" height="100%>
 </p>
 
 * Home Page Mobile view
@@ -48,7 +48,7 @@ I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files
   <img src="static/images/readme/testing/homepage-mobile.png" width="30%" height="20%">
 </p>
 
-- As a first time user I can see with the information in the homepage what the site is about. Home, login and register links can be seen in the navigation bar. 
+- As a first time user I can see with the information in the homepage what the site is about. Login and register links can be seen in the navigation bar. A footer can be seen with social media links. 
 
 - The mobile view, the navigation bar is changed to 3 small bars for better user experience. 
 
