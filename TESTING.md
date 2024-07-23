@@ -30,18 +30,22 @@ Website is fully responsive, with use of 4 breakpoints:
 
 ### HTML
 
-I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files by URI, pasting each page into the address bar and checking to ensure no errors were found. After changing one section element to a div and removing the trailing / from an img tag, all sites received no errors.
+I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files by URI, pasting the web address, checking to ensure no errors were found. After changing the aria-labelledby attribute to point to an element in the same document no error or warnings found. 
+
+<p align="center">
+  <img src="static/images/readme/testing/html-validator.png" width="30%" height="30%">
+</p>
 
 ### Manual Testing user stories
 
 * Home Page Desktop view
 <p align="center">
-  <img src="static/images/readme/testing/homescreen(Desktop).png" width="100%" height="100%>
+  <img src="static/images/readme/testing/homepage-desktop.pngpng" width="100%" height="100%>
 </p>
 
 * Home Page Mobile view
 <p align="center">
-  <img src="static/images/readme/testing/home_(iPhone SE).png" width="30%" height="20%">
+  <img src="static/images/readme/testing/homepage-mobile.png" width="30%" height="20%">
 </p>
 
 - As a first time user I can see with the information in the homepage what the site is about. Home, login and register links can be seen in the navigation bar. 
