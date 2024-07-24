@@ -61,7 +61,7 @@ This website will provide all these functionalities while ensuring intuitive nav
 
 ## User Stories
 
-**Epic: Admin/Store Owner**
+**Admin/Store Owner**
 
 | ID  | Content     |
 | --- | ----------- |
@@ -72,7 +72,7 @@ This website will provide all these functionalities while ensuring intuitive nav
 | 5   | As a **store owner**, I can send out newsletters via email to keep customers updated on new books. |
 | 6   | As a **store owner**, I have created a Facebook shop page to increase traffic to my website. |
 
-**Epic: First-time User**
+**First-time User**
 
 | ID  | Content     |
 | --- | ----------- |
@@ -81,7 +81,7 @@ This website will provide all these functionalities while ensuring intuitive nav
 | 9   | As a **first-time user**, I can access a navigation bar and footer to explore all website content. |
 | 10  | As a **first-time user**, I can register and create an account to view orders, save delivery details, create wish lists, and leave feedback. |
 
-**Epic: User**
+**User**
 
 | ID  | Content     |
 | --- | ----------- |
@@ -99,7 +99,7 @@ This website will provide all these functionalities while ensuring intuitive nav
 | 22  | As a **user**, I can enter my card details to complete payment for my goods. |
 | 23  | As a **user**, I receive order confirmations to ensure my order has been processed. |
 
-**Epic: Logged-in User**
+**Logged-in User**
 
 | ID  | Content     |
 | --- | ----------- |
@@ -110,14 +110,3 @@ This website will provide all these functionalities while ensuring intuitive nav
 | 28  | As a **logged-in user**, I can leave ratings and reviews to provide feedback on books. |
 | 29  | As a **logged-in User** , I can contact the bookstore so that I can find out any information that I require. |
 | 30  | As a **logged-in User** I can save selected products to my wish list for future purchase. |
-
-
-**Epic: Accounts**
-
-| ID  | Content     |
-| --- | ----------- |
-| 31  | As a **user**, I can easily check my login status (logged-in or logged-out) to confirm my current status. |
-| 32  | As a **user**, I can log in or log out of my account at any time to connect or disconnect from the website. |
-| 33  | As a **user**, I can register for an account to access features available for logged-in users. |
-| 34  | As a **user**, I receive a confirmation email upon account registration to verify the successful completion of registration. |
-| 35  | As a **logged-in user**, I can save my details to avoid the need to re-enter my address every time. |

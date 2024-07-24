@@ -50,7 +50,7 @@ Website is fully responsive, with use of 4 breakpoints:
 
 ![Register Page Screenshot](/static/images/readme/testing/register.png)
 
-- When filling the form, the below images show the tooltip working as it should, if a input field is not filled in, the field is let known to the user. 
+- When filling the form, the below images show the tooltip working as it should, if an input field is not filled in, the field is let known to the user. 
 
 ![Email tooltip alert](/static/images/readme/testing/register-tooltip1.png)
 ![Email tooltip alert](/static/images/readme/testing/register-tooltip2.png)
@@ -71,21 +71,24 @@ Website is fully responsive, with use of 4 breakpoints:
 
 #### Profile Page 
 
-- When the user login with the correct creditials, the user is directed to the homepage. In the nav bar on top, under the account icon, the user can click on their profile page. From here, the user can see their update their details, see their order history and a button to direct them to their wishlist. 
+- When the user login with the correct creditials, the user is re-directed to the homepage. In the nav bar on top, under the account icon, the user can click on their profile page. From here, the user can see/update their details, see their order history and click a button to direct them to their wishlist. 
 
-![Existing User](/static/images/readme/testing/register-success.png)
-
-- More nav bar tabs can be seen as the user is signed in to have access to these. 
-![Profile Page Screenshot](/static/images/readme/testing/loggedin_profile(Desktop).png)
+![Existing User](/static/images/readme/testing/profile.png)
 
 
-#### Categories Page 
+#### Navigation Bar - Categories  
 
-![Categories Page Screenshot](/static/images/readme/testing/categories(Desktop).png)
+- A dropdown menu with all categories, is seen when user clicks over the categories heading on the nav-bar. 
 
-- Card panels of added categories can be seen. With edit/delete button and the name and decription of the category is seen. 
+![Categories Page Screenshot](/static/images/readme/testing/categories-nav.png)
 
-- A form is seen when category name and decription input field is provided for the user. Along with a cancel and add category buttons. 
+- When a user clicks on a category, it redirects the user to books within the choosen category. 
+
+![Categories Page Screenshot](/static/images/readme/testing/veg.png)
+![Categories Page Screenshot](/static/images/readme/testing/baking.png)
+![Categories Page Screenshot](/static/images/readme/testing/seafood.png)
+![Categories Page Screenshot](/static/images/readme/testing/international.png)
+
 
 ![Add category Screenshot](/static/images/readme/testing/add_category(Desktop).png)
 - When user clicks add category, they are redirected to the categories page and will see that their category had been made and appears on the page.
