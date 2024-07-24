@@ -310,8 +310,6 @@ urlpatterns = [
 
 ```
 
-
-
 **Fixed Code**:
 ```python
 urlpatterns = [
@@ -352,6 +350,24 @@ To ensure that book_id is treated as an integer, prefix it with int:
 {% endif %}
 ```
 
+4 - **Issue**: Logo not loading to site
+
+**Original Code**:
+```python
+<a href="{% url 'home' %}" class="nav-link main-logo-link">
+    <img src="/media/logo.png" alt="CookBookNook Logo" class="brand-logo logo-fork">
+</a>
+```
+
+**Fixed Code**:
+```python
+{% load static %}
+<a href="{% url 'home' %}" class="nav-link main-logo-link">
+    <img src="{{ MEDIA_URL }}logo.png" alt="CookBookNook Logo" class="brand-logo logo-fork">
+ </a>
+ ```
+
+ During the development process, I used Google Chrome Devtools to manually test the features myself as I added them, following the user stories as I built the site and keeping a list of the bugs and their fixes along the way.
 
 ## Deployment
 
