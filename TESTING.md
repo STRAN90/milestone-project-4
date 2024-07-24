@@ -224,10 +224,15 @@ W3 CSS Validator (https://jigsaw.w3.org/css-validator/validator) to validate the
 #### Checkout.css
 ![W£ CSS Results](/static/images/readme/testing/css-checkout.png)
 
-### Python
+### Python PEP8
 
 Code Institue Python Linter (https://pep8ci.herokuapp.com/)
 
-![W£ CSS Results](/static/images/readme/testing/python.png)
+![Codeinstitue Python Linter](/static/images/readme/testing/python.png)
+
+Flake8 was used to check the python code to be PEP8 compliant. PEP8 only shows the type of errors that can be ignored, like the migration files. 
+
+![Flake8](/static/images/readme/testing/img1.png)
+![Flake8](/static/images/readme/testing/img2.png)
 
 [Back to README](README.md)
