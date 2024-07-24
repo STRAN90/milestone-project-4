@@ -37,8 +37,6 @@ responsive image and link to live site
 # About
 This is a full-stack e-commerce project built using Django, Python, HTML, CSS, and JavaScript. I have created a website for 'CookBookNook' designed to sell cookbooks.
 
-
-#
 # UX
 ## Strategy
 Using core UX principles, I began with strategy, considering the target audience and the features they would find valuable.
@@ -204,6 +202,14 @@ _Footer:_
 - Subscription options for receiving updates on new cookbook releases and culinary trends.
 - FAQ and Site information and contact form. 
 
+### Accessibility 
+
+I have been mindful during coding to ensure the website is as accessible friendly as possible. I have achieved this by:
+
+* Using semantic HTML.
+* Using descriptive alt attributes on images on the site. 
+* Ensuring there are sufficient colour contrast throughout the site.
+* Using font style with good accessibility.
 # Structure
 
 Simplicity was key to this website, to help users quickly and easily access the site and navigate within the site.
@@ -217,8 +223,6 @@ The website is made from 6 apps:
 - Profiles
 - Wishlist
 
-# Sitemap
-
 # Wireframes
 
 All wireframes were created used [Balsamiq](https://balsamiq.com/)
@@ -227,9 +231,105 @@ For all page wireframes, please see [WIREFRAMES.md](WIREFRAMES.md) file.
 
 # Database schema
 
-# Business Model
+## Entities
 
-# Surface
+### User
+- **UserID** (PK): Unique identifier for the user.
+- **Username**: Username of the user.
+- **Email**: Email address of the user.
+- **Password**: Hashed password of the user.
+- **FirstName**: First name of the user.
+- **LastName**: Last name of the user.
+- **Address**: Address of the user.
+- **PhoneNumber**: Phone number of the user.
+- **DateJoined**: Date when the user joined.
+
+### Book
+- **BookID** (PK): Unique identifier for the book.
+- **Title**: Title of the book.
+- **Author**: Author of the book.
+- **Description**: Description of the book.
+- **Price**: Price of the book.
+- **ImageURL**: URL of the book's image.
+- **Format**: Format of the book (e.g., paperback, ebook).
+- **CreatedAt**: Timestamp when the book was created.
+- **UpdatedAt**: Timestamp when the book was last updated.
+- **CategoryID** (FK): References `Category`.
+
+### Order
+- **OrderID** (PK): Unique identifier for the order.
+- **UserID** (FK): References `User`.
+- **OrderNumber**: Unique order number.
+- **OrderDate**: Date of the order.
+- **ShippingAddress**: Address where the order will be shipped.
+- **TotalAmount**: Total amount for the order.
+
+### OrderLineItem
+- **OrderLineItemID** (PK): Unique identifier for the order line item.
+- **OrderID** (FK): References `Order`.
+- **BookID** (FK): References `Book`.
+- **Quantity**: Number of units of the book.
+- **UnitPrice**: Price per unit of the book.
+
+### Wishlist
+- **WishlistID** (PK): Unique identifier for the wishlist item.
+- **UserID** (FK): References `User`.
+- **BookID** (FK): References `Book`.
+- **DateAdded**: Date when the book was added to the wishlist.
+
+### Review
+- **ReviewID** (PK): Unique identifier for the review.
+- **UserID** (FK): References `User`.
+- **BookID** (FK): References `Book`.
+- **Rating**: Rating given by the user (e.g., 1-5).
+- **Comment**: Text comment of the review.
+- **ReviewDate**: Date when the review was posted.
+
+### Category
+- **CategoryID** (PK): Unique identifier for the category.
+- **Name**: Name of the category.
+- **Description**: Description of the category.
+
+## Entity-Relationship Diagram (ERD)
+
+```plaintext
++--------------------+      +--------------------+      +--------------------+
+|      User          |      |      Order         |      |     Book           |
++--------------------+      +--------------------+      +--------------------+
+| UserID (PK)        |      | OrderID (PK)       |      | BookID (PK)        |
+| Username           |      | UserID (FK)        |      | Title              |
+| Email              |      | OrderNumber        |      | Author             |
+| Password           |      | OrderDate          |      | Description        |
+| FirstName          |      | ShippingAddress    |      | Price              |
+| LastName           |      | TotalAmount        |      | ImageURL           |
+| Address            |      +--------------------+      | Format             |
+| PhoneNumber        |            ^                     | CreatedAt          |
+| DateJoined         |            |                     | UpdatedAt          |
++--------------------+            |                     | CategoryID (FK)    |
+                                  |                     +--------------------+
+                                  |
+                                  |
+                       +------------------------+
+                       |   OrderLineItem        |
+                       +------------------------+
+                       | OrderLineItemID (PK)   |
+                       | OrderID (FK)           |
+                       | BookID (FK)            |
+                       | Quantity               |
+                       | UnitPrice              |
+                       +------------------------+
+
++--------------------+      +--------------------+      +--------------------+
+|    Wishlist        |      |      Review        |      |   Category         |
++--------------------+      +--------------------+      +--------------------+
+| WishlistID (PK)    |      | ReviewID (PK)      |      | CategoryID (PK)    |
+| UserID (FK)        |      | UserID (FK)        |      | Name               |
+| BookID (FK)        |      | BookID (FK)        |      | Description        |
+| DateAdded          |      | Rating             |      +--------------------+
++--------------------+      | Comment            |
+                             | ReviewDate         |
+                             +--------------------+
+```
 
 ## Design choice
 
@@ -264,13 +364,13 @@ I included a favicon in the project using Favicon.
 - [Python](https://www.python.org/)
 
 ## Frameworks, Libraries & Programs Used
-[GitHub](https://github.com/) - Holds the repository of my project, GitHub connects to GitPod and Heroku.
+[GitHub](https://github.com/) - Hosting service for software development and version control using Git, to save and store files for the website.
 
-[GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
+[GitPod](https://gitpod.io/workspaces) – Used as the main development environment. 
 
 [AWS](https://aws.amazon.com/) – was used to store static files 
 
-[Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
+[Heroku](https://www.heroku.com/) - Used to deploy the live site. 
 
 [Django](https://www.djangoproject.com/) - This framework was used to build the foundations of this project
 
@@ -288,11 +388,17 @@ I included a favicon in the project using Favicon.
 
 [Balsamiq](https://balsamiq.com/) - was used to create site wireframes.
 
-[Am I Responsive](http://ami.responsivedesign.is/) - to check if the site is responsive on different screen sizes.
+[Am I Responsive](http://ami.responsivedesign.is/) - An online tool to check how responsive the website is on different devices. Screenshot generated by the tool is presented in about section of the README file.
 
-[W3C Markup Validator](https://validator.w3.org/#validate_by_input) - was used to validate HTML
+[W3C Markup Validator](https://validator.w3.org/#validate_by_input) - was used to validate HTML.
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - was used to validate CSS
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - was used to validate CSS.
+
+[Google Dev Tools](https://developer.chrome.com/docs/devtools) - To troubleshoot and test features, solve issues with responsiveness and styling.
+
+[Code Institute Python Linter](https://pep8ci.herokuapp.com/) - Used to test the app.py file for Pep8 compliance.
+
+[Favicon](https://favicon.io/) - Used for site favicon 
 
 ## Extensions 
 
@@ -697,3 +803,16 @@ Stripe is needed to handle the checkout process when a payment is made. You will
     ```
 
 # Credits
+- [Code insitute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+3/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/) Boutique Ado Project
+- [Amazon Books](https://www.amazon.co.uk/b?node=266239&ie=UTF8&tag=googhydr-21&hvadid=606451811911&hvpos=&hvexid=&hvnetw=g&hvrand=7069569959697485814&hvpone=&hvptwo=&hvqmt=e&hvdev=c&ref=pd_sl_3jci83knr0_e) for images and book descriptions. 
+
+###  Media
+
+- [unsplash](https://www.unsplash.com/) - was used for background image.  
+- [Coolors](https://coolors.co/) - for colour palette used in this README.md
+
+### Acknowledgments
+
+- My mentor Rohit Sharma for his knowledge and helpful advice. 
+- Google search engine for limitless resources about web development.
+- Tutors at Code Insitute
