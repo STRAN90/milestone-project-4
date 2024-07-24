@@ -159,7 +159,7 @@ The other sort options were tested and everything worked as wanted for the user.
 
 ![Review Section Tooltip](/static/images/readme/testing/reviews-added.png)
 
-- When the user clicks on edit review, they are redirected to a page to edit and update their review. Then redirected back to the book detail page. 
+- When the user clicks on edit review, they are redirected to a page to edit and update their review. Then redirected back to the book detail page after the save changes/cancel.
 
 ![Review Section Edit](/static/images/readme/testing/review-edit.png)
 
@@ -167,8 +167,41 @@ The other sort options were tested and everything worked as wanted for the user.
 
 ![Review Section Edit](/static/images/readme/testing/review-delete.png)
 
+### WishList 
 
+- On the book detail page, an add to wishlist button can be seen by the user. They enables the user to add the book to their wishlist to save for future purchases. 
+- A notifcation in the top right corner is seen, to notify the user it has been added. The user is redirected to the wishlist page, where they choose to remove a book from the wishlist they have built up. 
 
+![Review Section Edit](/static/images/readme/testing/add-wishlist.png)
+
+- At the wishlist page, the user can remove the book from their wishlist. A warning to confirm deletetion appears when the remove button is clicked on. 
+
+![Review Section Edit](/static/images/readme/testing/wishlist-delete.png)
+
+- A notification at the top of the corner will confirm the book has been removed from the wishlist. 
+
+![Review Section Edit](/static/images/readme/testing/wishlist-deletesucess.png)
+
+### Shopping Bag 
+
+- At the book detail page, the user can add the book to the bag, choosing what quanity of the book they want to purchase. Successful add to shopping bag, will show a notification at the top corner to let the user know. 
+- The keep shopping button directs the user back to the books page. 
+
+![Add to Shopping Bag](/static/images/readme/testing/add-bag.png)
+
+- If the user navigates over to the shopping bag icon in the top right corner, they will be redirected to the shopping bag page. They will be able to see the book/s they have added to the shopping bag, the pricing (subtotal, delivery charges and grand total), and options to increase quanity, update or remove the book. 
+
+![Remove from Shopping Bag](/static/images/readme/testing/shoppingbag.png)
+
+- A warning will appear if user decides to remove the book for confirmation. 
+
+![Remove from Shopping Bag](/static/images/readme/testing/remove-bookconfirm.png)
+
+- If the user clicks on the book image they will be redirected to the book detail page. 
+- If they click on keep shopping they will be redirected back to the books page. 
+- If the user decides to checkout they will be redirected to the checkout page. 
+
+## Checkout 
 
 
 
