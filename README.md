@@ -4,6 +4,12 @@
   <img src="static/images/readme/testing/ami.png" width="100%" height="100%">
 </p>
 
+
+**Link to website** [here](https://cookbooknook-f2a539e614c9.herokuapp.com/).
+
+# About
+This is a full-stack e-commerce project built using Django, Python, HTML, CSS, and JavaScript. I have created a website for 'CookBookNook' designed to sell cookbooks.
+
 # Table of Contents 
 1. [UX](#ux)
     - [Strategy](#strategy)
@@ -30,12 +36,6 @@
 
 11. [Credits](#credits)
 
-
-responsive image and link to live site
-
-
-# About
-This is a full-stack e-commerce project built using Django, Python, HTML, CSS, and JavaScript. I have created a website for 'CookBookNook' designed to sell cookbooks.
 
 # UX
 ## Strategy
