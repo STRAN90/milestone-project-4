@@ -68,6 +68,11 @@ Website is fully responsive, with use of 4 breakpoints:
 
 ![Register Success](/static/images/readme/testing/register-success.png)
 
+### Search Bar
+
+- First time user, logged in user or Admin can use the search bar to search for key words they want in a cookbook. 
+
+![Search Bar](/static/images/readme/testing/searchbar.png)
 
 ### Profile Page 
 
@@ -221,6 +226,78 @@ The other sort options were tested and everything worked as wanted for the user.
 ![Checkout Success](/static/images/readme/testing/checkout-success.png)
 
 ## Admin
+
+- When logged in as Admin, book management can be access through the navigation bar not previously seen when logged in as a user. This gives the Admin ability to add/edit/delete books and categories within the site. 
+
+![Admin Nav-Bar](/static/images/readme/testing/superuser-navbar.png)
+
+### Book Management 
+
+- On this page the Admin can click on to Add category or Add book to manage these. 
+
+![Admin Nav-Bar](/static/images/readme/testing/bookmanagement.png)
+
+#### Add Category 
+
+- When the Admin clicks on to the Add category page, an add category form can be seen and a list of categories available already on the site. With options to edit/delete the current categories. 
+
+![Add Category Page](/static/images/readme/testing/add-category.png)
+
+- When adding a new category tooltips are in place to ensure form is filled correctly. 
+
+![Category form tooltip](/static/images/readme/testing/category-tooltip.png)
+
+- When category is added, a success notification is seen to alert Admin this was a successfully added. The new category will appear in the list of current categories. 
+
+![Add Category Success](/static/images/readme/testing/add-categorysuccess.png)
+
+- Admin can edit current categories when clicking on the Edit button. Redirects Admin to Edit category page, they can cancel or update. Redirecting them to the category management page afterwards. 
+
+![Edit Category](/static/images/readme/testing/edit-category.png)
+![Update Category](/static/images/readme/testing/update-category.png)
+
+- When the Admin clicks on the Delete button, a warning will appear to confirm this deletion. 
+
+![Delete Category](/static/images/readme/testing/delete-category.png)
+
+- A success message will appear to confirm category has been deleted. 
+
+![Delete Category notification](/static/images/readme/testing/delete-cat-success.png)
+
+### A Book 
+
+- When the Admin clicks on to the Add Book page, an add book form can be seen with option to cancel or add book. Cancelling will redirect Admin to book management page. 
+
+![Add Book Page](/static/images/readme/testing/add-book.png)
+
+- When adding a new book, tooltips are in place to ensure form is filled correctly. Admin can add image to the book form. 
+
+![Add Book form tooltips](/static/images/readme/testing/addbook-tooltip.png)
+
+- When a book is added, a success notification is seen to alert Admin this was a successfully added. The admin will be redirected to the book detail page of the new added book. 
+
+![Added New Book Page](/static/images/readme/testing/added-book.png)
+
+- From here the Admin can edit the new added book by clicking on the Edit button. Redirects Admin to Edit book page, they can cancel or update. Redirecting them to the book detail page afterwards. 
+
+[Edit Book Page](/static/images/readme/testing/edit-book.png)
+[Edit Book Page](/static/images/readme/testing/update-book.png)
+
+- When the Admin clicks on the Delete button, a warning will appear to confirm this deletion. 
+
+![Delete Book](/static/images/readme/testing/delete-book.png)
+
+- A success message will appear to confirm book has been deleted. 
+
+![Delete Book notification](/static/images/readme/testing/deletebook-success.png)
+
+### Books Page Admin View
+
+- The admin can edit/delete current books from this page view also. A warning appears to confirm deletion of book when Admin clicks on delete. 
+
+![Admin view Books Page](/static/images/readme/testing/allbooks-admin.png)
+![Delete Warning Books Page](/static/images/readme/testing/confirm-deletebooks.png)
+
 
 
 
