@@ -1,7 +1,7 @@
 # Testing
 I conducted manual testing throughout the project development, ensuring that each component was thoroughly tested as it was implemented. To inspect code and its effect on the rendered site simultaneously, I utilized Google Chrome DevTools in the browser.
 
-### Google's Lighthouse Performance
+## Google's Lighthouse Performance
 Google Chrome Dev Tools Lighthouse function to check the performance, accessibility and search engine optimization with scores documented below.
 
 #### Desktop
@@ -26,7 +26,7 @@ Website is fully responsive, with use of 4 breakpoints:
 - 1440px - desktop size,
 - 1950px - desktop large size.
 
-### Manual Testing user stories
+## Manual Testing user stories
 
 * Home Page Desktop view
 <p align="center">
@@ -44,25 +44,36 @@ Website is fully responsive, with use of 4 breakpoints:
 
 #### Register Page 
 
-- A form is present to sign up to the site. First name, last name, email, username, and password inputs are seen. As well with a cancel and register button. 
+- A form is present to sign up to the site. email, username, and password inputs are seen. As well with a back to login and signup button. 
 
-- Below the buttons is a link for the user if they have mistaken the wrong click and is already registers they can click on to the link to be redirected to the login page.
+- Above the form is a link for the user if they have mistaken the wrong click and is already registered. They can click on to the link to be redirected to the login page.
 
 ![Register Page Screenshot](/static/images/readme/testing/register.png)
 
-- When filling the form, the above images show the tooltip working as it should, if a input field is not filled in, the field is let known to the user. 
+- When filling the form, the below images show the tooltip working as it should, if a input field is not filled in, the field is let known to the user. 
 
-![Error Password Page Screenshot](/static/images/readme/testing/error_password_register(Desktop).png)
-![User Exists Page Screenshot](/static/images/readme/testing/user_exists_register(Desktop).png)
+![Email tooltip alert](/static/images/readme/testing/register-tooltip1.png)
+![Email tooltip alert](/static/images/readme/testing/register-tooltip2.png)
+![Username tooltip alert](/static/images/readme/testing/register-tooltip3.png)
+![Password tooltip alert](/static/images/readme/testing/register-tooltip4.png)
+![Password tooltip alert](/static/images/readme/testing/register-tooltip5.png)
+![Wrong Password tooltip alert](/static/images/readme/testing/register-password.png)
+![Wrong Password tooltip alert](/static/images/readme/testing/register-password2.png)
 
 - If username or email have been used, the user is alerted with a flask messge of "Username or email already exists". 
 
-![Successful Register Screenshot](/static/images/readme/testing/reg_success_login(Desktop).png)
-- When form is filled correctly, the user is registered and redirected to the login page as seen below with a Flask message "Registration successful".
+![Existing User](/static/images/readme/testing/existing-user.png)
+
+- When form is filled correctly, the user is registered and redirected to the home page, with a "Successfully signed in as (USERNAME)" alert top right of page. 
+
+![Existing User](/static/images/readme/testing/register-success.png)
+
 
 #### Profile Page 
 
-- When the user logins with the correct creditials, the user is directed to their profile page. Their first name, last name, email and username are stored here by the site. 
+- When the user logins with the correct creditials, the user is directed to the homepage. In the nav bar, under the account icon, the user can click on their profile page. From here, the user can see their update their details, see their order history and a button to direct them to their wishlist. 
+
+![Existing User](/static/images/readme/testing/register-success.png)
 
 - More nav bar tabs can be seen as the user is signed in to have access to these. 
 ![Profile Page Screenshot](/static/images/readme/testing/loggedin_profile(Desktop).png)
