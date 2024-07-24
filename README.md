@@ -243,6 +243,12 @@ Bootstrap chosen as it offers a flexible framework that has been adapted and cus
 
 The website uses a contrast of colours, I wanted to choose colours to have good contrast and look professional, ensuring that the content is visually manageable for users. I used coolors to design my colour palette. 
 
+### Icons
+
+I opted to integrate Font Awesome into the project to make use of the wide range of icons available. 
+
+I included a favicon in the project using Favicon.
+
 ## Typography
 - [Google Fonts](https://fonts.google.com/)
 

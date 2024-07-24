@@ -22,6 +22,7 @@ def all_books(request):
     sort = None
     direction = None
     categories = Category.objects.all()
+    current_sorting = None
 
     if request.GET:
         if 'sort' in request.GET:
