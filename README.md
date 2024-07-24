@@ -18,22 +18,15 @@
     - [Database schema](#database-schema)
     - [Models](#models)
 
-4. [Web marketing](#web-marketing)
-    - [Newsletter](#newsletter)
-    - [Facebook](#facebook)
-    - [SEO](#seo)
+4. [Surface](#surface)
 
-5. [Surface](#surface)
+5. [Technologies Used](#technologies-used)
 
-6. [Technologies Used](#technologies-used)
+6. [Testing](#testing)
 
-7. [Code validation](#code-validation)
+7. [Bugs](#bugs)
 
-8. [Testing](#testing)
-
-9. [Bugs](#bugs)
-
-10. [Deployment](#deployment)
+8. [Deployment](#deployment)
 
 11. [Credits](#credits)
 
@@ -244,7 +237,10 @@ Bootstrap chosen as it offers a flexible framework that has been adapted and cus
 
 ## Color schema
 
-## Fonts 
+## Typography
+- [Google Fonts](https://fonts.google.com/)
+
+  - Used 'Lato' font for the website as it great for accessibility.
 
 # Technologies Used
 
@@ -298,6 +294,64 @@ Bootstrap chosen as it offers a flexible framework that has been adapted and cus
 # Testing 
 
 Testing and results can be found [here](TESTING.md).
+
+# Bugs
+
+1 - **Issue**:
+In the `urls.py` file for the Books app, the `book_id` parameter is treated as a string by default, which can lead to issues when it is expected to be an integer.
+
+**Original Code**:
+```python
+
+urlpatterns = [
+    path('', views.all_books, name='books'),
+    path('<book_id>', views.book_detail, name='book_detail'),
+]
+
+```
+
+
+
+**Fixed Code**:
+```python
+urlpatterns = [
+    path('', views.all_books, name='books'),
+    path('<int:book_id>/', views.book_detail, name='book_detail'),
+]
+```
+To ensure that book_id is treated as an integer, prefix it with int:
+
+2 - **Issue**: Checkout form not loading
+
+**Fix**: add href link to bag.html for checkout url
+
+3 - **Issue**: Only category was showing books page
+
+**Original Code**:
+```python
+{% if book.category %}
+    <p class="small mt-1 mb-0">
+        <a class="text-muted" href="{% url 'books' %}?category={{ book.category.name }}">
+            <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+        </a>
+    </p>
+{% endif %}
+```
+
+**Fixed Code**:
+```python
+{% if book.categories.exists %}
+    <p class="small mt-1 mb-0">
+        {% for category in book.categories.all %}
+            <a class="text-muted" href="{% url 'books' %}?category={{ category.name }}">
+                <i class="fas fa-tag mr-1"></i>{{ category.friendly_name }}
+            </a>
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+```
+
 
 ## Deployment
 
