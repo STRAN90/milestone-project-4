@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'wishlist',
+    'corsheaders',
 
     # Other
     'crispy_forms',
@@ -76,7 +77,11 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'cookbooknook.urls'
 

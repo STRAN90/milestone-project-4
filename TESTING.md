@@ -71,7 +71,7 @@ Website is fully responsive, with use of 4 breakpoints:
 
 #### Profile Page 
 
-- When the user logins with the correct creditials, the user is directed to the homepage. In the nav bar, under the account icon, the user can click on their profile page. From here, the user can see their update their details, see their order history and a button to direct them to their wishlist. 
+- When the user login with the correct creditials, the user is directed to the homepage. In the nav bar on top, under the account icon, the user can click on their profile page. From here, the user can see their update their details, see their order history and a button to direct them to their wishlist. 
 
 ![Existing User](/static/images/readme/testing/register-success.png)
 
