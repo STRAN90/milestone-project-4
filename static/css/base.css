@@ -110,6 +110,7 @@ body {
 
 #display {
     margin-top: 25%;
+    display: table-caption;
 }
 
 hr {
