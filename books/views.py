@@ -188,7 +188,10 @@ def delete_book(request, book_id):
 def add_category(request):
     """View to add a new category."""
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have permission to add a category.')
+        messages.error(
+            request,
+            'You do not have permission to add a category.'
+        )
         return redirect('some_other_view')  # Redirect to an appropriate view
 
     if request.method == 'POST':
