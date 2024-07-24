@@ -184,3 +184,13 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+from django.http import HttpResponse, HttpResponseNotAllowed
+
+def webhook(request):
+    if request.method == 'POST':
+        # Handle POST request
+        return HttpResponse("Webhook received!")
+    else:
+        return HttpResponseNotAllowed(['POST'])
