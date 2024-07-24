@@ -26,12 +26,6 @@ Website is fully responsive, with use of 4 breakpoints:
 - 1440px - desktop size,
 - 1950px - desktop large size.
 
-### Code Validation
-
-### HTML
-
-I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files by URI, pasting the web address, checking to ensure no errors were found. After changing the aria-labelledby attribute to point to an element in the same document no error or warnings found. 
-
 ### Manual Testing user stories
 
 * Home Page Desktop view
@@ -166,19 +160,32 @@ I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files
 
 - Functional mobile nav bar can be seen. Easy and clear to use. 
 
-## Code Validators
+### Code Validation
 
 ### HTML
 
+I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files by URI, pasting the web address, checking to ensure no errors were found. After changing the aria-labelledby attribute to point to an element in the same document no error or warnings found. 
+
 W3 HTML Validator (https://validator.w3.org/) to validate all HTML files by URI, 
 
+![Web Address Screenshot](/static/images/readme/testing/html-validator.png)
 ![Home Page Screenshot](/static/images/readme/testing/html-home.png)
-![Register Page Screenshot](/static/images/readme/testing/register_html.png)
-![Login Page Screenshot](/static/images/readme/testing/login_html.png)
-![Categories Page Screenshot](/static/images/readme/testing/catergories_html.png)
-![Profile Page Screenshot](/static/images/readme/testing/profile_html.png)
-![Add Recipe Page Screenshot](/static/images/readme/testing/add_rec_html.png)
-![Website Screenshot](/static/images/readme/testing/app_html.png)
+![Register Page Screenshot](/static/images/readme/testing/html-register.png)
+![Login Page Screenshot](/static/images/readme/testing/html-login.png)
+![Categories Page Screenshot](/static/images/readme/testing/html-profile.png)
+![Profile Page Screenshot](/static/images/readme/testing/html-books.png)
+![Add Recipe Page Screenshot](/static/images/readme/testing/html-bookdetail.png)
+![Website Screenshot](/static/images/readme/testing/html-wishlist.png)
+![Website Screenshot](/static/images/readme/testing/html-shoppingbag.png)
+![Website Screenshot](/static/images/readme/testing/html-checkout.png)
+![Website Screenshot](/static/images/readme/testing/html-addbook.png)
+![Website Screenshot](/static/images/readme/testing/html-addcategory.png)
+![Website Screenshot](/static/images/readme/testing/html-managebooks.png)
+![Website Screenshot](/static/images/readme/testing/html-orderhistory.png)
+
+
+
+
 
 ### CSS
 
