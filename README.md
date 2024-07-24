@@ -22,19 +22,16 @@ This is a full-stack e-commerce project built using Django, Python, HTML, CSS, a
 3. [Structure](#structure)
     - [Wireframes](#wireframes)
     - [Database schema](#database-schema)
-    - [Models](#models)
 
-4. [Surface](#surface)
+4. [Technologies Used](#technologies-used)
 
-5. [Technologies Used](#technologies-used)
+5. [Testing](#testing)
 
-6. [Testing](#testing)
+6. [Bugs](#bugs)
 
-7. [Bugs](#bugs)
+7. [Deployment](#deployment)
 
-8. [Deployment](#deployment)
-
-11. [Credits](#credits)
+8. [Credits](#credits)
 
 
 # UX
@@ -804,15 +801,16 @@ Stripe is needed to handle the checkout process when a payment is made. You will
 
 # Credits
 - [Code insitute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+3/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/) Boutique Ado Project
-- [Amazon Books](https://www.amazon.co.uk/b?node=266239&ie=UTF8&tag=googhydr-21&hvadid=606451811911&hvpos=&hvexid=&hvnetw=g&hvrand=7069569959697485814&hvpone=&hvptwo=&hvqmt=e&hvdev=c&ref=pd_sl_3jci83knr0_e) for images and book descriptions. 
+
 
 ###  Media
 
 - [unsplash](https://www.unsplash.com/) - was used for background image.  
 - [Coolors](https://coolors.co/) - for colour palette used in this README.md
+- [Amazon Books](https://www.amazon.co.uk/b?node=266239&ie=UTF8&tag=googhydr-21&hvadid=606451811911&hvpos=&hvexid=&hvnetw=g&hvrand=7069569959697485814&hvpone=&hvptwo=&hvqmt=e&hvdev=c&ref=pd_sl_3jci83knr0_e) for images and book descriptions. 
 
 ### Acknowledgments
 
 - My mentor Rohit Sharma for his knowledge and helpful advice. 
 - Google search engine for limitless resources about web development.
-- Tutors at Code Insitute
+- Tutors at Code Insitute!!!
