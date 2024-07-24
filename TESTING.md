@@ -52,13 +52,13 @@ Website is fully responsive, with use of 4 breakpoints:
 
 - When filling the form, the below images show the tooltip working as it should, if an input field is not filled in, the field is let known to the user. 
 
-![Email tooltip alert](/static/images/readme/testing/register-tooltip1.png)
-![Email tooltip alert](/static/images/readme/testing/register-tooltip2.png)
-![Username tooltip alert](/static/images/readme/testing/register-tooltip3.png)
-![Password tooltip alert](/static/images/readme/testing/register-tooltip4.png)
-![Password tooltip alert](/static/images/readme/testing/register-tooltip5.png)
-![Wrong Password tooltip alert](/static/images/readme/testing/register-password.png)
-![Wrong Password tooltip alert](/static/images/readme/testing/register-password2.png)
+![Email tooltip alert Screenshot](/static/images/readme/testing/register-tooltip1.png)
+![Email tooltip alert Screenshot](/static/images/readme/testing/register-tooltip2.png)
+![Username tooltip alert Screenshot](/static/images/readme/testing/register-tooltip3.png)
+![Password tooltip alert Screenshot](/static/images/readme/testing/register-tooltip4.png)
+![Password tooltip alert Screenshot](/static/images/readme/testing/register-tooltip5.png)
+![Wrong Password tooltip alert Screenshot](/static/images/readme/testing/register-password.png)
+![Wrong Password tooltip alert Screenshot](/static/images/readme/testing/register-password2.png)
 
 - If username or email have been used, the user is alerted with a flask messge of "Username or email already exists". 
 
@@ -66,21 +66,30 @@ Website is fully responsive, with use of 4 breakpoints:
 
 - When form is filled correctly, the user is registered and redirected to the home page, with a "Successfully signed in as (USERNAME)" alert top right of page. 
 
-![Existing User](/static/images/readme/testing/register-success.png)
+![Register Success](/static/images/readme/testing/register-success.png)
 
 
 #### Profile Page 
 
 - When the user login with the correct creditials, the user is re-directed to the homepage. In the nav bar on top, under the account icon, the user can click on their profile page. From here, the user can see/update their details, see their order history and click a button to direct them to their wishlist. 
 
-![Existing User](/static/images/readme/testing/profile.png)
+![User Profile Page](/static/images/readme/testing/profile.png)
+
+#### Navigation Bar - Books
+
+- A dropdown menu with all books sorted by price, rating and link to all the site books, is seen when user clicks over the books heading on the nav-bar.
+
+![Books Nav-bar](/static/images/readme/testing/books-nav.png)
+
+#### All Books
+
 
 
 #### Navigation Bar - Categories  
 
 - A dropdown menu with all categories, is seen when user clicks over the categories heading on the nav-bar. 
 
-![Categories Page Screenshot](/static/images/readme/testing/categories-nav.png)
+![Categories Nav-bar](/static/images/readme/testing/categories-nav.png)
 
 - When a user clicks on a category, it redirects the user to books within the choosen category. 
 
@@ -89,8 +98,21 @@ Website is fully responsive, with use of 4 breakpoints:
 ![Categories Page Screenshot](/static/images/readme/testing/seafood.png)
 ![Categories Page Screenshot](/static/images/readme/testing/international.png)
 
+#### Navigation Bar - Special Offers
 
-![Add category Screenshot](/static/images/readme/testing/add_category(Desktop).png)
+- A dropdown menu with clearance and new arrivals, is seen when user clicks over the special offers heading on the nav-bar. 
+
+![Special Offers Nav-bar](/static/images/readme/testing/specialoffers-nav.png)
+
+- When a user clicks on a new arrivals, it redirects the user to books that are in new arrivals. 
+
+![New arrivals Page](/static/images/readme/testing/add_categorynew-arrivals.png)
+
+- When a user clicks on a clearance, it redirects the user to books that are in clearance. 
+
+![Clearance](/static/images/readme/testing/clearance.png)
+
+
 - When user clicks add category, they are redirected to the categories page and will see that their category had been made and appears on the page.
 
 ![Add Category Success Screenshot](/static/images/readme/testing/add_success_categories(Desktop).png)
