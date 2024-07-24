@@ -237,6 +237,12 @@ Bootstrap chosen as it offers a flexible framework that has been adapted and cus
 
 ## Color schema
 
+<p align="center">
+  <img src="static/images/readme/coolors.png" width="50%" height="20%">
+</p>
+
+The website uses a contrast of colours, I wanted to choose colours to have good contrast and look professional, ensuring that the content is visually manageable for users. I used coolors to design my colour palette. 
+
 ## Typography
 - [Google Fonts](https://fonts.google.com/)
 
@@ -367,7 +373,7 @@ To ensure that book_id is treated as an integer, prefix it with int:
  </a>
  ```
 
- During the development process, I used Google Chrome Devtools to manually test the features myself as I added them, following the user stories as I built the site and keeping a list of the bugs and their fixes along the way.
+ During the development process, I used Google Chrome Devtools to manually test the features myself as I added them, following the user stories as I built the site and keeping a list of the bugs and their fixes along the way.gi
 
 ## Deployment
 
