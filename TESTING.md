@@ -160,7 +160,7 @@ Website is fully responsive, with use of 4 breakpoints:
 
 - Functional mobile nav bar can be seen. Easy and clear to use. 
 
-### Code Validation
+## Code Validation
 
 ### HTML
 
@@ -168,30 +168,61 @@ I used [W3 HTML Validator](https://validator.w3.org/) to validate all HTML files
 
 W3 HTML Validator (https://validator.w3.org/) to validate all HTML files by URI, 
 
+#### Web Address
 ![Web Address Screenshot](/static/images/readme/testing/html-validator.png)
+
+#### Homepage
 ![Home Page Screenshot](/static/images/readme/testing/html-home.png)
+
+#### Register
 ![Register Page Screenshot](/static/images/readme/testing/html-register.png)
+
+#### Signin
 ![Login Page Screenshot](/static/images/readme/testing/html-login.png)
+
+#### Profile
 ![Categories Page Screenshot](/static/images/readme/testing/html-profile.png)
+
+#### Books Page
 ![Profile Page Screenshot](/static/images/readme/testing/html-books.png)
+
+#### Book Detail
 ![Add Recipe Page Screenshot](/static/images/readme/testing/html-bookdetail.png)
+
+#### Wishlist
 ![Website Screenshot](/static/images/readme/testing/html-wishlist.png)
+
+#### Shopping Bag
 ![Website Screenshot](/static/images/readme/testing/html-shoppingbag.png)
+
+#### Checkout
 ![Website Screenshot](/static/images/readme/testing/html-checkout.png)
+
+#### Add Book
 ![Website Screenshot](/static/images/readme/testing/html-addbook.png)
+
+#### Add Category
 ![Website Screenshot](/static/images/readme/testing/html-addcategory.png)
+
+#### Manage Books
 ![Website Screenshot](/static/images/readme/testing/html-managebooks.png)
+
+#### Order History
 ![Website Screenshot](/static/images/readme/testing/html-orderhistory.png)
-
-
-
 
 
 ### CSS
 
 W3 CSS Validator (https://jigsaw.w3.org/css-validator/validator) to validate the style.css file. 
 
-![W£ CSS Results](/static/images/readme/testing/w3_css.png)
+#### Base.css
+![W£ CSS Results](/static/images/readme/testing/css-validator.png)
+
+#### Profile.css
+![W£ CSS Results](/static/images/readme/testing/css-profile.png)
+
+#### Checkout.css
+![W£ CSS Results](/static/images/readme/testing/css-checkout.png)
 
 ### Python
 
