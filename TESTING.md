@@ -191,17 +191,36 @@ The other sort options were tested and everything worked as wanted for the user.
 
 - If the user navigates over to the shopping bag icon in the top right corner, they will be redirected to the shopping bag page. They will be able to see the book/s they have added to the shopping bag, the pricing (subtotal, delivery charges and grand total), and options to increase quanity, update or remove the book. 
 
-![Remove from Shopping Bag](/static/images/readme/testing/shoppingbag.png)
+![Edit Shopping Bag](/static/images/readme/testing/shoppingbag.png)
 
 - A warning will appear if user decides to remove the book for confirmation. 
 
-![Remove from Shopping Bag](/static/images/readme/testing/remove-bookconfirm.png)
+![Shopping Bag removal Warning](/static/images/readme/testing/remove-bookconfirm.png)
 
 - If the user clicks on the book image they will be redirected to the book detail page. 
 - If they click on keep shopping they will be redirected back to the books page. 
-- If the user decides to checkout they will be redirected to the checkout page. 
+- If user decides to update the quanity of the book in the shopping bag, a notification will notify user this was successful.
 
-## Checkout 
+![Update Shopping Bag](/static/images/readme/testing/update-bag.png)
+
+- If the user decides to checkout they will be redirected to the secure checkout page.
+
+### Checkout Page
+
+- The user can find a form to fill delivery details in and the information of order summary side by side on the page. 
+- Tooltips are inplace to ensure correct fill forming. 
+
+![Secure Checkout Page](/static/images/readme/testing/checkout-tooltip.png)
+
+- User can click on the book thumbnail in their order summary to be directed back to the book detail. 
+
+- When form is filled correctly and complete order is clicked, the user is redirected to order confirmation page. Detailing order details, delivery address and pricing. 
+- Adjust bag button redirects user to the shopping bag page. 
+- A button to new arrivals can be clicked on to let user know about the latest releases. 
+
+![Checkout Success](/static/images/readme/testing/checkout-success.png)
+
+## Admin
 
 
 
