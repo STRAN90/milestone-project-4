@@ -42,7 +42,7 @@ Website is fully responsive, with use of 4 breakpoints:
 
 - The mobile view, the navigation bar is changed to 3 small bars for better user experience. 
 
-#### Register Page 
+### Register Page 
 
 - A form is present to sign up to the site. email, username, and password inputs are seen. As well with a back to login and signup button. 
 
@@ -69,23 +69,47 @@ Website is fully responsive, with use of 4 breakpoints:
 ![Register Success](/static/images/readme/testing/register-success.png)
 
 
-#### Profile Page 
+### Profile Page 
 
 - When the user login with the correct creditials, the user is re-directed to the homepage. In the nav bar on top, under the account icon, the user can click on their profile page. From here, the user can see/update their details, see their order history and click a button to direct them to their wishlist. 
 
 ![User Profile Page](/static/images/readme/testing/profile.png)
 
-#### Navigation Bar - Books
+### Order History 
+
+- Within the profile page, the user can see their order history. They are able to click on the order number and be redirected to order details, where the delivery address, items purchased, prices and order info is available.
+
+- A button is available by the order details, for the user to go back to their profile page.  
+
+![User Profile Page](/static/images/readme/testing/order-history.png)
+
+## Navigation Bar 
+### Navigation Bar - Books
 
 - A dropdown menu with all books sorted by price, rating and link to all the site books, is seen when user clicks over the books heading on the nav-bar.
 
 ![Books Nav-bar](/static/images/readme/testing/books-nav.png)
 
-#### All Books
+- When a user clicks on Price, it redirects the user to all books within the website sorted by prices of books ascending.
+- When a user clicks on Ratings, it redirects the user to all books within the website sorted by ratings of books by descending ratings. 
+- When a user clicks on All Books, it redirects the user to all books within the website. 
+
+![All Books Page](/static/images/readme/testing/allbooks.png)
+
+- On the books page, a search bar can be seen, where the user can navigate the books. Given the ability to sort the books by price (high-low/low-high), ratings (high-low/low-high) and title name (A-Z/Z-A). 
+ 
+![Sort-bar](/static/images/readme/testing/sortbar.png)
+
+Books sorted by Price (high-low).
+![Sort Book by Price (High-low)](/static/images/readme/testing/sortprice-books.png)
+
+Books sorted by title name (A-Z). 
+![Sort-bar Book by Title Name (A-Z)](/static/images/readme/testing/sortaz-books.png)
+
+The other sort options were tested and everything worked as wanted for the user. 
 
 
-
-#### Navigation Bar - Categories  
+### Navigation Bar - Categories  
 
 - A dropdown menu with all categories, is seen when user clicks over the categories heading on the nav-bar. 
 
@@ -98,7 +122,7 @@ Website is fully responsive, with use of 4 breakpoints:
 ![Categories Page Screenshot](/static/images/readme/testing/seafood.png)
 ![Categories Page Screenshot](/static/images/readme/testing/international.png)
 
-#### Navigation Bar - Special Offers
+### Navigation Bar - Special Offers
 
 - A dropdown menu with clearance and new arrivals, is seen when user clicks over the special offers heading on the nav-bar. 
 
@@ -106,11 +130,50 @@ Website is fully responsive, with use of 4 breakpoints:
 
 - When a user clicks on a new arrivals, it redirects the user to books that are in new arrivals. 
 
-![New arrivals Page](/static/images/readme/testing/add_categorynew-arrivals.png)
+![New arrivals Page](/static/images/readme/testing/new-arrivals.png)
 
 - When a user clicks on a clearance, it redirects the user to books that are in clearance. 
 
 ![Clearance](/static/images/readme/testing/clearance.png)
+
+## Book Details
+
+- When the user clicks on an image of a book on the books page, they will be redirected to the book details page. Where more information of the book is given, including ratings, prices, book format, reviews and options to add to shopping bag, add to wishlist. 
+
+![Book Details Page](/static/images/readme/testing/book-details.png)
+
+### Review Section 
+
+- Here, the user can add a review for the book. 
+
+![Book Details Page](/static/images/readme/testing/reviews.png)
+
+- Tooltips are in placed, to ensure no empty text fields and max number for ratings out of 5 is in place before review is published on the site. 
+
+![Review Section Tooltip](/static/images/readme/testing/review-tooltip.png)
+![Review Section Tooltip](/static/images/readme/testing/review-tooltip1.png)
+![Review Section Tooltip](/static/images/readme/testing/review-tooltip2.png)
+![Review Section Tooltip](/static/images/readme/testing/review-tooltip3.png)
+
+- Once a review is submitted, the user can edit or delete their review. 
+
+![Review Section Tooltip](/static/images/readme/testing/reviews-added.png)
+
+- When the user clicks on edit review, they are redirected to a page to edit and update their review. Then redirected back to the book detail page. 
+
+![Review Section Edit](/static/images/readme/testing/review-edit.png)
+
+- User is directed to a warning page for the user to confirm deletion before the review is erased. Once deleted/cancelled, user is redirected back to the book details page. 
+
+![Review Section Edit](/static/images/readme/testing/review-delete.png)
+
+
+
+
+
+
+
+
 
 
 - When user clicks add category, they are redirected to the categories page and will see that their category had been made and appears on the page.
